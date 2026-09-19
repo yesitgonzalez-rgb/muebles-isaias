@@ -82,15 +82,15 @@ html, body {
 .site-header__logo {
   text-decoration: none;
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
 }
 
-.site-header__wordmark {
-  font-family: var(--font-title);
-  font-weight: 700;
-  font-size: 1.5rem;
-  letter-spacing: 0.05em;
-  color: var(--color-cream);
-  white-space: nowrap;
+.site-header__logo-img {
+  display: block;
+  height: 52px;
+  width: auto;
+  object-fit: contain;
 }
 
 .site-nav {
@@ -354,8 +354,8 @@ html, body {
     padding: 0.85rem 5vw;
   }
 
-  .site-header__wordmark {
-    font-size: 1.2rem;
+  .site-header__logo-img {
+    height: 40px;
   }
 
   .site-nav__toggle {
