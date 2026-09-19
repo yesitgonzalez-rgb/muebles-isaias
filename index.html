@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muebles Isaías | Fábrica de Muebles</title>
+<meta name="description" content="Muebles Isaías: fábrica de muebles modernos. Salas, comedores y alcobas de calidad, fabricados para todo Colombia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- ============================================= -->
+<!-- FRANJA SUPERIOR — IDENTIDAD Y CONTACTO          -->
+<!-- ============================================= -->
+<header class="topbar">
+  <div class="topbar__shipping">
+    <svg class="topbar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <path d="M1 7h11v9H1z"/>
+      <path d="M12 10h4l3 3v3h-7z"/>
+      <circle cx="5.5" cy="18" r="1.7"/>
+      <circle cx="16" cy="18" r="1.7"/>
+    </svg>
+    <span>Fabricamos para todo Colombia</span>
+  </div>
+
+  <a class="topbar__whatsapp" href="https://wa.me/573155588560" target="_blank" rel="noopener">
+    <svg class="topbar__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.1a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.1 8.1 0 1 1 12 20.1Zm4.4-6.1c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8 1-.1.1-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.4c.1-.1.2-.3.2-.4.1-.1 0-.3 0-.4-.1-.1-.5-1.3-.7-1.7-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2s.8 2.3.9 2.5c.1.2 1.6 2.5 4 3.5.6.2 1 .4 1.3.5.6.2 1.1.2 1.5.1.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.2-.2-.4-.3Z"/>
+    </svg>
+    <span>315 5588560</span>
+  </a>
+</header>
+
+<!-- ============================================= -->
+<!-- HEADER PRINCIPAL — LOGO + NAVEGACIÓN + CTA     -->
+<!-- ============================================= -->
+<header class="site-header">
+  <a href="#inicio" class="site-header__logo">
+    <!-- PENDIENTE: reemplazar por <img src="assets/img/logo/..."> con el logotipo oficial (archivo no localizado todavía) -->
+    <span class="site-header__wordmark">MUEBLES ISAÍAS</span>
+  </a>
+
+  <button class="site-nav__toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Abrir menú de navegación">
+    <span></span><span></span><span></span>
+  </button>
+
+  <nav class="site-nav" id="siteNav" aria-label="Navegación principal">
+    <ul class="site-nav__list">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#salas">Salas</a></li>
+      <li><a href="#comedores">Comedores</a></li>
+      <li><a href="#alcobas">Alcobas</a></li>
+      <li><a href="#restauracion">Restauración</a></li>
+      <li><a href="#ofertas">Ofertas</a></li>
+      <li><a href="#contacto">Contáctanos</a></li>
+    </ul>
+    <a href="https://wa.me/573155588560" class="btn btn--primary site-nav__cta" target="_blank" rel="noopener">COTIZAR POR WHATSAPP</a>
+  </nav>
+</header>
+
+<!-- ============================================= -->
+<!-- SLIDER PRINCIPAL DEL HOME — MUEBLES MODERNOS   -->
+<!-- ============================================= -->
+<section class="hero" id="hero" aria-label="Muebles Modernos">
+  <div class="hero__track" id="heroTrack">
+
+    <!-- SLIDE 1 — SALA MODERNA -->
+    <article class="hero__slide is-active" data-slide="0" aria-hidden="false">
+      <picture class="hero__media">
+        <source media="(max-width: 767px)" srcset="assets/img/hero/moderno-sala-mobile.jpg">
+        <img src="assets/img/hero/moderno-sala-desktop.jpg" alt="Sala moderna Muebles Isaías" loading="eager">
+      </picture>
+      <div class="hero__overlay"></div>
+      <div class="hero__content">
+        <h1 class="hero__title">MUEBLES MODERNOS</h1>
+        <p class="hero__subtitle">Diseño para espacios con personalidad.<br>Salas · Comedores · Alcobas</p>
+        <div class="hero__actions">
+          <a href="#catalogo-modernos" class="btn btn--primary">EXPLORAR MUEBLES MODERNOS</a>
+          <a href="https://wa.me/573155588560" class="btn btn--ghost" target="_blank" rel="noopener">COTIZAR POR WHATSAPP</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- SLIDE 2 — COMEDOR MODERNO -->
+    <article class="hero__slide" data-slide="1" aria-hidden="true">
+      <picture class="hero__media">
+        <source media="(max-width: 767px)" srcset="assets/img/hero/moderno-comedor-mobile.jpg">
+        <img src="assets/img/hero/moderno-comedor-desktop.jpg" alt="Comedor moderno Muebles Isaías" loading="lazy">
+      </picture>
+      <div class="hero__overlay"></div>
+      <div class="hero__content">
+        <h1 class="hero__title">MUEBLES MODERNOS</h1>
+        <p class="hero__subtitle">Diseño para espacios con personalidad.<br>Salas · Comedores · Alcobas</p>
+        <div class="hero__actions">
+          <a href="#catalogo-modernos" class="btn btn--primary">EXPLORAR MUEBLES MODERNOS</a>
+          <a href="https://wa.me/573155588560" class="btn btn--ghost" target="_blank" rel="noopener">COTIZAR POR WHATSAPP</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- SLIDE 3 — ALCOBA MODERNA -->
+    <article class="hero__slide" data-slide="2" aria-hidden="true">
+      <picture class="hero__media">
+        <source media="(max-width: 767px)" srcset="assets/img/hero/moderno-alcoba-mobile.jpg">
+        <img src="assets/img/hero/moderno-alcoba-desktop.jpg" alt="Alcoba moderna Muebles Isaías" loading="lazy">
+      </picture>
+      <div class="hero__overlay"></div>
+      <div class="hero__content">
+        <h1 class="hero__title">MUEBLES MODERNOS</h1>
+        <p class="hero__subtitle">Diseño para espacios con personalidad.<br>Salas · Comedores · Alcobas</p>
+        <div class="hero__actions">
+          <a href="#catalogo-modernos" class="btn btn--primary">EXPLORAR MUEBLES MODERNOS</a>
+          <a href="https://wa.me/573155588560" class="btn btn--ghost" target="_blank" rel="noopener">COTIZAR POR WHATSAPP</a>
+        </div>
+      </div>
+    </article>
+
+  </div>
+
+  <!-- Controles -->
+  <button class="hero__arrow hero__arrow--prev" id="heroPrev" aria-label="Imagen anterior">&#10094;</button>
+  <button class="hero__arrow hero__arrow--next" id="heroNext" aria-label="Siguiente imagen">&#10095;</button>
+
+  <div class="hero__dots" id="heroDots" role="tablist" aria-label="Seleccionar imagen">
+    <button class="hero__dot is-active" data-goto="0" role="tab" aria-selected="true" aria-label="Ver sala moderna"></button>
+    <button class="hero__dot" data-goto="1" role="tab" aria-selected="false" aria-label="Ver comedor moderno"></button>
+    <button class="hero__dot" data-goto="2" role="tab" aria-selected="false" aria-label="Ver alcoba moderna"></button>
+  </div>
+</section>
+
+<script src="assets/js/site-nav.js"></script>
+<script src="assets/js/hero-slider.js"></script>
+</body>
+</html>

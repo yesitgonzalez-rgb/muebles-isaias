@@ -1,0 +1,428 @@
+/* ==========================================================
+   MUEBLES ISAÍAS — FASE 0: FRANJA SUPERIOR + HERO MODERNOS
+   ========================================================== */
+
+:root {
+  --color-dark: #1a1410;
+  --color-cream: #f6f1ea;
+  --color-gold: #c9a15a;
+  --color-gold-light: #e4c98a;
+  --font-title: 'Playfair Display', serif;
+  --font-body: 'Poppins', sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  background: var(--color-dark);
+}
+
+/* ---------- FRANJA SUPERIOR ---------- */
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  padding: 0.55rem 4vw;
+  background: var(--color-dark);
+  border-bottom: 1px solid rgba(201,161,90,0.25);
+  font-size: 0.85rem;
+}
+
+.topbar__shipping {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--color-cream);
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+  opacity: 0.9;
+  text-align: center;
+}
+
+.topbar__whatsapp {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-cream);
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 200ms ease;
+}
+
+.topbar__whatsapp:hover {
+  color: var(--color-gold-light);
+}
+
+.topbar__icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  color: var(--color-gold);
+}
+
+/* ---------- HEADER PRINCIPAL (LOGO + NAV + CTA) ---------- */
+
+.site-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1rem 4vw;
+  background: #241c16;
+}
+
+.site-header__logo {
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.site-header__wordmark {
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 0.05em;
+  color: var(--color-cream);
+  white-space: nowrap;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  flex: 1;
+}
+
+.site-nav__list {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.site-nav__list a {
+  color: var(--color-cream);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: color 200ms ease;
+}
+
+.site-nav__list a:hover {
+  color: var(--color-gold-light);
+}
+
+.site-nav__cta {
+  padding: 0.6rem 1.4rem;
+  font-size: 0.82rem;
+  white-space: nowrap;
+}
+
+.site-nav__toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 34px;
+  height: 34px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.site-nav__toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--color-cream);
+  transition: transform 200ms ease, opacity 200ms ease;
+}
+
+.site-nav__toggle.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.site-nav__toggle.is-open span:nth-child(2) { opacity: 0; }
+.site-nav__toggle.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ---------- HERO ---------- */
+
+.hero {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1920 / 700;
+  min-height: 320px;
+  max-height: 700px;
+  overflow: hidden;
+  background: var(--color-dark);
+}
+
+.hero__track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.hero__slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 900ms ease;
+}
+
+.hero__slide.is-active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
+}
+
+.hero__media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.35) 40%, rgba(0,0,0,0.7) 100%);
+}
+
+.hero__content {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 6vw;
+  max-width: 900px;
+  color: var(--color-cream);
+}
+
+.hero__title {
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: clamp(2.4rem, 6vw, 5rem);
+  line-height: 1.05;
+  margin: 0 0 0.75rem;
+  letter-spacing: 0.02em;
+}
+
+.hero__subtitle {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  color: var(--color-cream);
+  margin: 0 0 2.2rem;
+  opacity: 0.9;
+}
+
+.hero__actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.9rem 2rem;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: transform 200ms ease, background 200ms ease, color 200ms ease;
+  letter-spacing: 0.03em;
+}
+
+.btn--primary {
+  background: var(--color-gold);
+  color: var(--color-dark);
+}
+
+.btn--primary:hover {
+  background: var(--color-gold-light);
+  transform: translateY(-2px);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--color-cream);
+  border: 1px solid var(--color-cream);
+}
+
+.btn--ghost:hover {
+  background: var(--color-cream);
+  color: var(--color-dark);
+  transform: translateY(-2px);
+}
+
+/* ---------- CONTROLES ---------- */
+
+.hero__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(246,241,234,0.5);
+  background: rgba(26,20,16,0.35);
+  color: var(--color-cream);
+  font-size: 1.1rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 200ms ease, border-color 200ms ease;
+}
+
+.hero__arrow:hover {
+  background: rgba(201,161,90,0.85);
+  border-color: var(--color-gold);
+}
+
+.hero__arrow--prev { left: 2.5vw; }
+.hero__arrow--next { right: 2.5vw; }
+
+.hero__dots {
+  position: absolute;
+  bottom: 2.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  gap: 0.6rem;
+}
+
+.hero__dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  border: 1px solid var(--color-cream);
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: background 200ms ease, transform 200ms ease;
+}
+
+.hero__dot.is-active {
+  background: var(--color-gold);
+  border-color: var(--color-gold);
+  transform: scale(1.15);
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 767px) {
+  .topbar {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.4rem 1.2rem;
+    padding: 0.6rem 5vw;
+  }
+
+  .topbar__shipping span {
+    font-size: 0.78rem;
+  }
+
+  .site-header {
+    padding: 0.85rem 5vw;
+  }
+
+  .site-header__wordmark {
+    font-size: 1.2rem;
+  }
+
+  .site-nav__toggle {
+    display: flex;
+  }
+
+  .site-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 20;
+    flex-direction: column;
+    align-items: stretch;
+    background: #241c16;
+    border-top: 1px solid rgba(201,161,90,0.25);
+    padding: 1.2rem 6vw 1.5rem;
+    gap: 1.2rem;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 300ms ease, opacity 200ms ease;
+  }
+
+  .site-nav.is-open {
+    max-height: 480px;
+    opacity: 1;
+  }
+
+  .site-nav__list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .site-nav__cta {
+    text-align: center;
+    width: 100%;
+  }
+
+  .hero {
+    aspect-ratio: 1080 / 1350;
+    max-height: none;
+  }
+
+  .hero__content {
+    padding: 0 6vw;
+    align-items: center;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .hero__actions {
+    justify-content: center;
+  }
+
+  .hero__arrow {
+    width: 40px;
+    height: 40px;
+  }
+
+  .hero__arrow--prev { left: 3vw; }
+  .hero__arrow--next { right: 3vw; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__slide {
+    transition: none;
+  }
+}
