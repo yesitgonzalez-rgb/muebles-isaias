@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
+<body id="inicio">
 
 <!-- ============================================= -->
 <!-- FRANJA SUPERIOR — IDENTIDAD Y CONTACTO          -->
@@ -129,6 +129,144 @@
     <button class="hero__dot" data-goto="2" role="tab" aria-selected="false" aria-label="Ver alcoba moderna"></button>
   </div>
 </section>
+
+<!-- ============================================= -->
+<!-- CATEGORÍAS PRINCIPALES                         -->
+<!-- ============================================= -->
+<section class="categories" id="catalogo-modernos" aria-label="Categorías de muebles">
+  <h2 class="section-title">EXPLORA POR CATEGORÍA</h2>
+  <p class="section-subtitle">Estilo Moderno disponible ahora. Clásico y Lineal, próximamente.</p>
+
+  <div class="categories__grid">
+
+    <article class="category-card" id="salas">
+      <picture class="category-card__media">
+        <source media="(max-width: 767px)" srcset="assets/img/hero/moderno-sala-mobile.jpg">
+        <img src="assets/img/hero/moderno-sala-desktop.jpg" alt="Salas modernas Muebles Isaías" loading="lazy">
+      </picture>
+      <div class="category-card__body">
+        <h3 class="category-card__title">SALAS</h3>
+        <p class="category-card__style">Modernas</p>
+      </div>
+    </article>
+
+    <article class="category-card" id="comedores">
+      <picture class="category-card__media">
+        <source media="(max-width: 767px)" srcset="assets/img/hero/moderno-comedor-mobile.jpg">
+        <img src="assets/img/hero/moderno-comedor-desktop.jpg" alt="Comedores modernos Muebles Isaías" loading="lazy">
+      </picture>
+      <div class="category-card__body">
+        <h3 class="category-card__title">COMEDORES</h3>
+        <p class="category-card__style">Modernos</p>
+      </div>
+    </article>
+
+    <article class="category-card">
+      <picture class="category-card__media">
+        <source media="(max-width: 767px)" srcset="assets/img/hero/moderno-alcoba-mobile.jpg">
+        <img src="assets/img/hero/moderno-alcoba-desktop.jpg" alt="Alcobas modernas Muebles Isaías" loading="lazy">
+      </picture>
+      <div class="category-card__body">
+        <h3 class="category-card__title">ALCOBAS</h3>
+        <p class="category-card__style">Modernas</p>
+        <a href="alcobas-modernas.html" class="btn btn--primary category-card__cta">VER CATÁLOGO</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ============================================= -->
+<!-- PRODUCTOS DESTACADOS                           -->
+<!-- ============================================= -->
+<section class="featured" aria-label="Productos destacados">
+  <h2 class="section-title">PRODUCTOS DESTACADOS</h2>
+
+  <div class="featured__grid">
+    <article class="featured-card">
+      <div class="featured-card__media">
+        <img src="LAPTOP%20HOME/ALCOBAS%20MODERNAS/SALA%20M1.png" alt="Conjunto de muebles de dormitorio de madera modernos" loading="lazy">
+      </div>
+      <div class="featured-card__body">
+        <h3 class="featured-card__title">Conjunto de muebles de dormitorio de madera modernos</h3>
+        <p class="featured-card__composicion">Cama con plataforma · Mesitas de noche a juego · Armario · Cómoda</p>
+        <a href="alcobas-modernas.html" class="btn btn--ghost">VER EN EL CATÁLOGO</a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============================================= -->
+<!-- FABRICACIÓN, PERSONALIZACIÓN Y ENVÍOS          -->
+<!-- ============================================= -->
+<section class="making" id="contacto" aria-label="Fabricación, personalización y contacto">
+  <h2 class="section-title section-title--light">FABRICACIÓN Y ATENCIÓN AL CLIENTE</h2>
+
+  <div class="making__grid">
+    <div class="making__item">
+      <svg class="making__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+        <path d="M4 21v-7l8-8 7 7-8 8H4Z"/>
+        <path d="M14.5 6.5 17 4l3 3-2.5 2.5"/>
+      </svg>
+      <h3>Fabricación propia</h3>
+      <p>Muebles fabricados por Muebles Isaías, pensados para espacios con personalidad.</p>
+    </div>
+
+    <div class="making__item">
+      <svg class="making__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+        <path d="M12 20h9"/>
+        <path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/>
+      </svg>
+      <h3>Personalización</h3>
+      <p>Nuestros productos también se fabrican y venden por separado y/o pueden personalizarse.</p>
+    </div>
+
+    <div class="making__item">
+      <svg class="making__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.1a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.1 8.1 0 1 1 12 20.1Zm4.4-6.1c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8 1-.1.1-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.4c.1-.1.2-.3.2-.4.1-.1 0-.3 0-.4-.1-.1-.5-1.3-.7-1.7-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2s.8 2.3.9 2.5c.1.2 1.6 2.5 4 3.5.6.2 1 .4 1.3.5.6.2 1.1.2 1.5.1.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.2-.2-.4-.3Z"/>
+      </svg>
+      <h3>Atención al cliente</h3>
+      <p>Escríbenos directamente por WhatsApp: <a href="https://wa.me/573155588560" target="_blank" rel="noopener">315 5588560</a></p>
+    </div>
+
+    <div class="making__item">
+      <svg class="making__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+        <path d="M1 7h11v9H1z"/>
+        <path d="M12 10h4l3 3v3h-7z"/>
+        <circle cx="5.5" cy="18" r="1.7"/>
+        <circle cx="16" cy="18" r="1.7"/>
+      </svg>
+      <h3>Envíos a todo Colombia</h3>
+      <p>Fabricamos para todo Colombia y coordinamos el envío de tu pedido.</p>
+    </div>
+  </div>
+
+  <a href="https://wa.me/573155588560" class="btn btn--primary making__cta" target="_blank" rel="noopener">COTIZAR POR WHATSAPP</a>
+</section>
+
+<!-- ============================================= -->
+<!-- FOOTER                                         -->
+<!-- ============================================= -->
+<footer class="site-footer">
+  <div class="site-footer__brand">
+    <img src="assets/img/logo/logo-muebles-isaias.jpg" alt="Muebles Isaías" class="site-footer__logo">
+    <p>Fábrica de muebles. Fabricamos para todo Colombia.</p>
+  </div>
+
+  <nav class="site-footer__nav" aria-label="Navegación del pie de página">
+    <a href="#inicio">Inicio</a>
+    <a href="#salas">Salas</a>
+    <a href="#comedores">Comedores</a>
+    <a href="alcobas-modernas.html">Alcobas</a>
+    <a href="#restauracion">Restauración</a>
+    <a href="#ofertas">Ofertas</a>
+    <a href="#contacto">Contáctanos</a>
+  </nav>
+
+  <a href="https://wa.me/573155588560" class="site-footer__whatsapp" target="_blank" rel="noopener">WhatsApp: 315 5588560</a>
+
+  <p class="site-footer__copy">© 2026 Muebles Isaías. Todos los derechos reservados.</p>
+</footer>
 
 <script src="assets/js/site-nav.js"></script>
 <script src="assets/js/hero-slider.js"></script>
