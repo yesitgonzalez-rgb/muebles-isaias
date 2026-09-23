@@ -135,44 +135,67 @@
 <!-- ============================================= -->
 <section class="categories" id="catalogo-modernos" aria-label="Categorías de muebles">
   <h2 class="section-title">EXPLORA POR CATEGORÍA</h2>
-  <p class="section-subtitle">Estilo Moderno disponible ahora. Clásico y Lineal, próximamente.</p>
+  <p class="section-subtitle">Elige el ambiente y el estilo que buscas.</p>
 
   <div class="categories__grid">
 
     <article class="category-card" id="salas">
-      <picture class="category-card__media">
-        <source media="(max-width: 767px)" srcset="assets/img/hero/moderno-sala-mobile.jpg">
-        <img src="assets/img/hero/moderno-sala-desktop.jpg" alt="Salas modernas Muebles Isaías" loading="lazy">
-      </picture>
-      <div class="category-card__body">
+      <div class="category-card__visual">
+        <picture>
+          <source media="(max-width: 767px)" srcset="assets/img/hero/moderno-sala-mobile.jpg">
+          <img src="assets/img/hero/moderno-sala-desktop.jpg" alt="Salas modernas Muebles Isaías" loading="lazy">
+        </picture>
         <h3 class="category-card__title">SALAS</h3>
-        <p class="category-card__style">Modernas</p>
       </div>
+      <ul class="category-card__styles" aria-label="Estilos de Salas">
+        <li><span class="style-item is-pending" data-categoria="salas-modernas" aria-disabled="true"><span class="style-item__name">Modernas</span><span class="style-item__state">Próximamente</span></span></li>
+        <li><span class="style-item is-pending" data-categoria="salas-clasicas" aria-disabled="true"><span class="style-item__name">Clásicas</span><span class="style-item__state">Próximamente</span></span></li>
+        <li><span class="style-item is-pending" data-categoria="salas-lineales" aria-disabled="true"><span class="style-item__name">Lineales</span><span class="style-item__state">Próximamente</span></span></li>
+      </ul>
     </article>
 
     <article class="category-card" id="comedores">
-      <picture class="category-card__media">
-        <source media="(max-width: 767px)" srcset="assets/img/hero/moderno-comedor-mobile.jpg">
-        <img src="assets/img/hero/moderno-comedor-desktop.jpg" alt="Comedores modernos Muebles Isaías" loading="lazy">
-      </picture>
-      <div class="category-card__body">
+      <div class="category-card__visual">
+        <picture>
+          <source media="(max-width: 767px)" srcset="assets/img/hero/moderno-comedor-mobile.jpg">
+          <img src="assets/img/hero/moderno-comedor-desktop.jpg" alt="Comedores modernos Muebles Isaías" loading="lazy">
+        </picture>
         <h3 class="category-card__title">COMEDORES</h3>
-        <p class="category-card__style">Modernos</p>
       </div>
+      <ul class="category-card__styles" aria-label="Estilos de Comedores">
+        <li><a class="style-item style-item--link" href="comedores-modernos.html" data-categoria="comedores-modernos"><span class="style-item__name">Modernos</span><span class="style-item__state">Ver catálogo &rarr;</span></a></li>
+        <li><span class="style-item is-pending" data-categoria="comedores-clasicos" aria-disabled="true"><span class="style-item__name">Clásicos</span><span class="style-item__state">Próximamente</span></span></li>
+        <li><span class="style-item is-pending" data-categoria="comedores-lineales" aria-disabled="true"><span class="style-item__name">Lineales</span><span class="style-item__state">Próximamente</span></span></li>
+      </ul>
     </article>
 
     <article class="category-card">
-      <picture class="category-card__media">
-        <source media="(max-width: 767px)" srcset="assets/img/hero/moderno-alcoba-mobile.jpg">
-        <img src="assets/img/hero/moderno-alcoba-desktop.jpg" alt="Alcobas modernas Muebles Isaías" loading="lazy">
-      </picture>
-      <div class="category-card__body">
+      <div class="category-card__visual">
+        <picture>
+          <source media="(max-width: 767px)" srcset="assets/img/hero/moderno-alcoba-mobile.jpg">
+          <img src="assets/img/hero/moderno-alcoba-desktop.jpg" alt="Alcobas modernas Muebles Isaías" loading="lazy">
+        </picture>
         <h3 class="category-card__title">ALCOBAS</h3>
-        <p class="category-card__style">Modernas</p>
-        <a href="alcobas-modernas.html" class="btn btn--primary category-card__cta">VER CATÁLOGO</a>
       </div>
+      <ul class="category-card__styles" aria-label="Estilos de Alcobas">
+        <li><a class="style-item style-item--link" href="alcobas-modernas.html" data-categoria="alcobas-modernas"><span class="style-item__name">Modernas</span><span class="style-item__state">Ver catálogo &rarr;</span></a></li>
+        <li><span class="style-item is-pending" data-categoria="alcobas-clasicas" aria-disabled="true"><span class="style-item__name">Clásicas</span><span class="style-item__state">Próximamente</span></span></li>
+        <li><span class="style-item is-pending" data-categoria="alcobas-lineales" aria-disabled="true"><span class="style-item__name">Lineales</span><span class="style-item__state">Próximamente</span></span></li>
+      </ul>
     </article>
 
+  </div>
+
+  <div class="categories__extras">
+    <article class="category-tile" id="restauracion">
+      <h3 class="category-tile__title">RESTAURACIÓN</h3>
+      <span class="style-item__state">Próximamente</span>
+    </article>
+
+    <article class="category-tile" id="ofertas">
+      <h3 class="category-tile__title">OFERTAS</h3>
+      <span class="style-item__state">Próximamente</span>
+    </article>
   </div>
 </section>
 

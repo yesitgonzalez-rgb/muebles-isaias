@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comedores Modernos | Muebles Isaías</title>
+<meta name="description" content="Catálogo de Comedores Modernos de Muebles Isaías, con envíos a todo Colombia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/alcobas-modernas.css">
+<link rel="stylesheet" href="assets/css/catalogo-wide.css">
+</head>
+<body>
+
+<!-- ============================================= -->
+<!-- FRANJA SUPERIOR (igual al Home)                -->
+<!-- ============================================= -->
+<header class="topbar">
+  <div class="topbar__shipping">
+    <svg class="topbar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+      <path d="M1 7h11v9H1z"/>
+      <path d="M12 10h4l3 3v3h-7z"/>
+      <circle cx="5.5" cy="18" r="1.7"/>
+      <circle cx="16" cy="18" r="1.7"/>
+    </svg>
+    <span>Fabricamos para todo Colombia</span>
+  </div>
+
+  <a class="topbar__whatsapp" href="https://wa.me/573155588560" target="_blank" rel="noopener">
+    <svg class="topbar__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.1a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.1 8.1 0 1 1 12 20.1Zm4.4-6.1c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8 1-.1.1-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.4c.1-.1.2-.3.2-.4.1-.1 0-.3 0-.4-.1-.1-.5-1.3-.7-1.7-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2s.8 2.3.9 2.5c.1.2 1.6 2.5 4 3.5.6.2 1 .4 1.3.5.6.2 1.1.2 1.5.1.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.2-.2-.4-.3Z"/>
+    </svg>
+    <span>315 5588560</span>
+  </a>
+</header>
+
+<!-- ============================================= -->
+<!-- HEADER PRINCIPAL (igual al Home) + CARRITO     -->
+<!-- ============================================= -->
+<header class="site-header">
+  <a href="index.html" class="site-header__logo">
+    <img src="assets/img/logo/logo-muebles-isaias.jpg" alt="Muebles Isaías" class="site-header__logo-img">
+  </a>
+
+  <button class="site-nav__toggle" id="navToggle" aria-expanded="false" aria-controls="siteNav" aria-label="Abrir menú de navegación">
+    <span></span><span></span><span></span>
+  </button>
+
+  <nav class="site-nav" id="siteNav" aria-label="Navegación principal">
+    <ul class="site-nav__list">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="index.html#salas">Salas</a></li>
+      <li><a href="comedores-modernos.html" class="is-current">Comedores</a></li>
+      <li><a href="alcobas-modernas.html">Alcobas</a></li>
+      <li><a href="index.html#restauracion">Restauración</a></li>
+      <li><a href="index.html#ofertas">Ofertas</a></li>
+      <li><a href="index.html#contacto">Contáctanos</a></li>
+    </ul>
+    <a href="https://wa.me/573155588560" class="btn btn--primary site-nav__cta" target="_blank" rel="noopener">COTIZAR POR WHATSAPP</a>
+  </nav>
+
+  <button class="cart-toggle" id="cartToggle" aria-expanded="false" aria-controls="cartPanel" aria-label="Ver carrito de cotización">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+      <circle cx="9" cy="21" r="1.4"/>
+      <circle cx="18" cy="21" r="1.4"/>
+      <path d="M2.5 3h2.4l2.1 11.4a2 2 0 0 0 2 1.6h7.6a2 2 0 0 0 2-1.6L21 7H6"/>
+    </svg>
+    <span class="cart-toggle__count" id="cartCount">0</span>
+  </button>
+
+  <div class="cart-panel" id="cartPanel">
+    <h2 class="cart-panel__title">Carrito de cotización</h2>
+    <p class="cart-panel__hint">Selecciona los productos que te interesan. No es una compra en línea: al finalizar, te contactamos por WhatsApp para cotizar.</p>
+    <ul class="cart-panel__list" id="cartList">
+      <li class="cart-panel__empty" id="cartEmpty">Todavía no has agregado productos.</li>
+    </ul>
+    <a href="#" class="btn btn--primary cart-panel__cta" id="cartQuoteBtn" target="_blank" rel="noopener">COTIZA CON NOSOTROS</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============================================= -->
+  <!-- IDENTIFICADOR DE CATEGORÍA                     -->
+  <!-- ============================================= -->
+  <section class="category-banner">
+    <span class="category-banner__box">CATEGORÍA: COMEDORES MODERNOS</span>
+  </section>
+
+  <!-- ============================================= -->
+  <!-- MENSAJE: VENTA INDIVIDUAL Y PERSONALIZACIÓN    -->
+  <!-- ============================================= -->
+  <section class="notice-band">
+    <p>Nuestros productos también se fabrican y venden por separado y/o pueden personalizarse.</p>
+  </section>
+
+  <!-- ============================================= -->
+  <!-- GRID DE TARJETAS DE PRODUCTO                   -->
+  <!-- Nombres provisionales (pendientes de nombres/referencias reales) -->
+  <!-- ============================================= -->
+  <section class="product-grid product-grid--wide" aria-label="Productos de Comedores Modernos">
+
+    <article class="product-card product-card--wide" data-product-id="comedor-moderno-01">
+      <div class="product-card__media">
+        <img src="assets/img/catalogo/comedores-modernos/comedor-moderno-1.jpg" alt="Comedor Moderno 1" loading="eager">
+      </div>
+      <div class="product-card__body">
+        <h3 class="product-card__title">Comedor Moderno 1</h3>
+        <button class="btn btn--primary product-card__add" data-add-to-cart data-product-name="Comedor Moderno 1">
+          ADICIONAR AL CARRITO
+        </button>
+      </div>
+    </article>
+
+    <article class="product-card product-card--wide" data-product-id="comedor-moderno-02">
+      <div class="product-card__media">
+        <img src="assets/img/catalogo/comedores-modernos/comedor-moderno-2.jpg" alt="Comedor Moderno 2" loading="lazy">
+      </div>
+      <div class="product-card__body">
+        <h3 class="product-card__title">Comedor Moderno 2</h3>
+        <button class="btn btn--primary product-card__add" data-add-to-cart data-product-name="Comedor Moderno 2">
+          ADICIONAR AL CARRITO
+        </button>
+      </div>
+    </article>
+
+    <article class="product-card product-card--wide" data-product-id="comedor-moderno-03">
+      <div class="product-card__media">
+        <img src="assets/img/catalogo/comedores-modernos/comedor-moderno-3.jpg" alt="Comedor Moderno 3" loading="lazy">
+      </div>
+      <div class="product-card__body">
+        <h3 class="product-card__title">Comedor Moderno 3</h3>
+        <button class="btn btn--primary product-card__add" data-add-to-cart data-product-name="Comedor Moderno 3">
+          ADICIONAR AL CARRITO
+        </button>
+      </div>
+    </article>
+
+  </section>
+
+  <!-- ============================================= -->
+  <!-- ENVÍOS A TODO COLOMBIA                         -->
+  <!-- ============================================= -->
+  <section class="shipping-band">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+      <path d="M1 7h11v9H1z"/>
+      <path d="M12 10h4l3 3v3h-7z"/>
+      <circle cx="5.5" cy="18" r="1.7"/>
+      <circle cx="16" cy="18" r="1.7"/>
+    </svg>
+    <span>ENVÍOS A TODO COLOMBIA</span>
+  </section>
+
+  <!-- ============================================= -->
+  <!-- MEDIOS DE PAGO — ESPACIO RESERVADO             -->
+  <!-- ============================================= -->
+  <section class="payment-band">
+    <span class="payment-band__label">Medios de pago</span>
+    <div class="payment-band__placeholder" aria-label="Espacio reservado para medios de pago (recurso pendiente)">
+      <!-- PENDIENTE: insertar aquí la imagen oficial de medios de pago cuando esté disponible -->
+    </div>
+  </section>
+
+</main>
+
+<script src="assets/js/site-nav.js"></script>
+<script src="assets/js/cart.js"></script>
+</body>
+</html>

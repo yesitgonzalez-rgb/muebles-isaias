@@ -1,0 +1,36 @@
+/* Complemento para tarjetas de catálogo con imagen panorámica.
+   Se carga DESPUÉS de alcobas-modernas.css y solo añade reglas nuevas. */
+
+.product-grid--wide {
+  grid-template-columns: 1fr;
+  max-width: 1100px;
+}
+
+.product-card--wide .product-card__media {
+  aspect-ratio: 1712 / 624;
+}
+
+.product-card--wide .product-card__body {
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 1.5rem;
+}
+
+.product-card--wide .product-card__add {
+  width: auto;
+  min-width: 240px;
+  margin-top: 0;
+}
+
+@media (max-width: 767px) {
+  .product-card--wide .product-card__body {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .product-card--wide .product-card__add {
+    width: 100%;
+  }
+}
