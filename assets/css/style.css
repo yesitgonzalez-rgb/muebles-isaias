@@ -440,7 +440,21 @@ html, body {
   .categories__grid { grid-template-columns: 1fr; }
   .featured__grid { grid-template-columns: 1fr; }
   .making__grid { grid-template-columns: 1fr; }
-  .site-footer__nav { flex-direction: column; gap: 0.75rem; }
+  .site-footer__nav { flex-direction: column; gap: 0; }
+
+  /* Área táctil ampliada en móvil (mismo aspecto visual) */
+  .site-footer__nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0 1rem;
+  }
+
+  .site-footer__whatsapp {
+    padding: 0.7rem 0;
+    margin: -0.7rem 0 0.8rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -804,6 +818,7 @@ html, body {
 
 .making__item p a {
   color: var(--color-gold-light);
+  white-space: nowrap;
 }
 
 .making__cta {
@@ -816,6 +831,11 @@ html, body {
 
 .site-footer {
   background: #14100c;
+  /* Línea dorada fina que separa el footer de la sección Fabricación */
+  background-image: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: top;
   color: var(--color-cream);
   padding: 3rem 4vw 1.5rem;
   text-align: center;
