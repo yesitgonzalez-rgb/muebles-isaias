@@ -203,45 +203,36 @@ html, body {
   display: block;
 }
 
-.hero__overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.35) 40%, rgba(0,0,0,0.7) 100%);
-}
+/* ---------- FRANJA DE INFORMACIÓN Y CTA (debajo del slider) ---------- */
 
-.hero__content {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 0 6vw;
-  max-width: 900px;
+.hero-band {
+  background: var(--color-dark);
   color: var(--color-cream);
+  text-align: center;
+  padding: 2.5rem 6vw;
 }
 
-.hero__title {
+.hero-band__title {
   font-family: var(--font-title);
   font-weight: 700;
-  font-size: clamp(2.4rem, 6vw, 5rem);
-  line-height: 1.05;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  line-height: 1.1;
   margin: 0 0 0.75rem;
   letter-spacing: 0.02em;
 }
 
-.hero__subtitle {
+.hero-band__subtitle {
   font-family: var(--font-body);
   font-weight: 400;
-  font-size: clamp(1rem, 2vw, 1.4rem);
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
   color: var(--color-cream);
-  margin: 0 0 2.2rem;
+  margin: 0 0 1.75rem;
   opacity: 0.9;
 }
 
-.hero__actions {
+.hero-band__actions {
   display: flex;
+  justify-content: center;
   gap: 1rem;
   flex-wrap: wrap;
 }
@@ -308,14 +299,6 @@ html, body {
 
 .hero__arrow--prev { left: 2.5vw; }
 .hero__arrow--next { right: 2.5vw; }
-
-/* Tablet: deja libre el espacio de las flechas para que no cubran el texto */
-@media (min-width: 768px) and (max-width: 1024px) {
-  .hero__content {
-    padding-left: calc(2.5vw + 48px + 1rem);
-    padding-right: 6vw;
-  }
-}
 
 .hero__dots {
   position: absolute;
@@ -417,15 +400,9 @@ html, body {
     max-height: none;
   }
 
-  .hero__content {
-    padding: 0 6vw;
-    align-items: center;
-    text-align: center;
-    max-width: 100%;
-  }
-
-  .hero__actions {
-    justify-content: center;
+  .hero-band__actions {
+    flex-direction: column;
+    align-items: stretch;
   }
 
   .hero__arrow {
