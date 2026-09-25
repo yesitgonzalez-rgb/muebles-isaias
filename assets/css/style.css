@@ -554,29 +554,46 @@ html, body {
 }
 
 .style-item__state {
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #8a7c6c;
+  color: #6b5f52;
+  white-space: nowrap;
 }
 
 .style-item--link .style-item__state {
-  color: #9a7434;
+  color: #8a6420;
   font-weight: 600;
 }
 
 .style-item--link:hover .style-item__name {
-  color: #9a7434;
+  color: #8a6420;
 }
 
 .style-item.is-pending {
   cursor: default;
-  opacity: 0.75;
+}
+
+.style-item.is-pending .style-item__name {
+  color: #6b5f52;
+}
+
+/* Texto solo para lectores de pantalla */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .categories__extras {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 2rem;
   max-width: 1200px;
   margin: 2rem auto 0;
@@ -584,11 +601,11 @@ html, body {
 
 .category-tile {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
   gap: 0.4rem 1rem;
-  padding: 1.4rem 1.6rem;
+  padding: 1.4rem 1.2rem;
   background: var(--color-dark);
   border-radius: 6px;
   box-shadow: 0 10px 26px rgba(26,20,16,0.12);
@@ -601,6 +618,7 @@ html, body {
   font-weight: 700;
   font-size: 1.25rem;
   letter-spacing: 0.05em;
+  white-space: nowrap;
 }
 
 .category-tile .style-item__state {
