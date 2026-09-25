@@ -11,3 +11,6 @@ LAPTOP HOME/ALCOBAS MODERNAS/*
 RESPONSIFE/
 LAPTOP HOME/COMEDORES MODERNOS/
 LAPTOP HOME/Decoración tradicionales para el dormitorio principal.docx
+# Reglas sin "/" ni acentos: la CLI de Vercel en Windows no aplica las reglas con "/" a rutas con caracteres no ASCII (ignore@4.0.6)
+*Modelo de Secci*n.png
+*Decorac*n tradicionales para el dormitorio principal.docx
