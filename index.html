@@ -61,34 +61,56 @@
 </header>
 
 <!-- ============================================= -->
-<!-- SLIDER PRINCIPAL DEL HOME — MUEBLES MODERNOS   -->
+<!-- SLIDER PRINCIPAL DEL HOME (6 de 9 slides)         -->
 <!-- ============================================= -->
-<section class="hero" id="hero" aria-label="Muebles Modernos">
+<section class="hero" id="hero" aria-label="Slider principal">
   <div class="hero__track" id="heroTrack">
 
-    <!-- SLIDE 1 — SALA MODERNA -->
+    <!-- SLIDE 1 — Alcobas Modernas — AM1 -->
     <article class="hero__slide is-active" data-slide="0" aria-hidden="false">
       <picture class="hero__media">
-        <source media="(max-width: 767px)" srcset="assets/img/hero/moderno-sala-mobile.jpg">
-        <img src="assets/img/hero/moderno-sala-desktop.jpg" alt="Sala moderna Muebles Isaías" loading="eager">
+        <img src="assets/img/hero/alcobas-modernas-am1.jpg" alt="Alcobas modernas Muebles Isaías" loading="eager">
       </picture>
     </article>
 
-    <!-- SLIDE 2 — COMEDOR MODERNO -->
+    <!-- SLIDE 2 — Alcobas Modernas — AM2 -->
     <article class="hero__slide" data-slide="1" aria-hidden="true">
       <picture class="hero__media">
-        <source media="(max-width: 767px)" srcset="assets/img/hero/moderno-comedor-mobile.jpg">
-        <img src="assets/img/hero/moderno-comedor-desktop.jpg" alt="Comedor moderno Muebles Isaías" loading="lazy">
+        <img src="assets/img/hero/alcobas-modernas-am2.jpg" alt="Alcobas modernas Muebles Isaías" loading="lazy">
       </picture>
     </article>
 
-    <!-- SLIDE 3 — ALCOBA MODERNA -->
+    <!-- SLIDE 3 — Alcobas Clásicas — AC1 -->
     <article class="hero__slide" data-slide="2" aria-hidden="true">
       <picture class="hero__media">
-        <source media="(max-width: 767px)" srcset="assets/img/hero/moderno-alcoba-mobile.jpg">
-        <img src="assets/img/hero/moderno-alcoba-desktop.jpg" alt="Alcoba moderna Muebles Isaías" loading="lazy">
+        <img src="assets/img/hero/alcobas-clasicas-ac1.jpg" alt="Alcobas clásicas Muebles Isaías" loading="lazy">
       </picture>
     </article>
+
+    <!-- SLIDE 4 — Comedores Modernos — CM2 -->
+    <article class="hero__slide" data-slide="3" aria-hidden="true">
+      <picture class="hero__media">
+        <img src="assets/img/hero/comedores-modernos-cm2.jpg" alt="Comedores modernos Muebles Isaías" loading="lazy">
+      </picture>
+    </article>
+
+    <!-- SLIDE 5 — Comedores Modernos — CM3 -->
+    <article class="hero__slide" data-slide="4" aria-hidden="true">
+      <picture class="hero__media">
+        <img src="assets/img/hero/comedores-modernos-cm3.jpg" alt="Comedores modernos Muebles Isaías" loading="lazy">
+      </picture>
+    </article>
+
+    <!-- SLIDE 6 — Salas Clásicas — SC1 -->
+    <article class="hero__slide" data-slide="5" aria-hidden="true">
+      <picture class="hero__media">
+        <img src="assets/img/hero/salas-clasicas-sc1.jpg" alt="Salas clásicas Muebles Isaías" loading="lazy">
+      </picture>
+    </article>
+
+    <!-- SLIDES 7, 8 y 9 — PENDIENTES: aún no hay imágenes reales.
+         Al agregarlas: un <article class="hero__slide"> por imagen (data-slide="6", "7", "8")
+         y un <button class="hero__dot"> más por cada una en .hero__dots. -->
 
   </div>
 
@@ -97,9 +119,12 @@
   <button class="hero__arrow hero__arrow--next" id="heroNext" aria-label="Siguiente imagen">&#10095;</button>
 
   <div class="hero__dots" id="heroDots" role="tablist" aria-label="Seleccionar imagen">
-    <button class="hero__dot is-active" data-goto="0" role="tab" aria-selected="true" aria-label="Ver sala moderna"></button>
-    <button class="hero__dot" data-goto="1" role="tab" aria-selected="false" aria-label="Ver comedor moderno"></button>
-    <button class="hero__dot" data-goto="2" role="tab" aria-selected="false" aria-label="Ver alcoba moderna"></button>
+    <button class="hero__dot is-active" data-goto="0" role="tab" aria-selected="true" aria-label="Ver alcobas modernas, imagen 1"></button>
+    <button class="hero__dot" data-goto="1" role="tab" aria-selected="false" aria-label="Ver alcobas modernas, imagen 2"></button>
+    <button class="hero__dot" data-goto="2" role="tab" aria-selected="false" aria-label="Ver alcobas clásicas"></button>
+    <button class="hero__dot" data-goto="3" role="tab" aria-selected="false" aria-label="Ver comedores modernos, imagen 1"></button>
+    <button class="hero__dot" data-goto="4" role="tab" aria-selected="false" aria-label="Ver comedores modernos, imagen 2"></button>
+    <button class="hero__dot" data-goto="5" role="tab" aria-selected="false" aria-label="Ver salas clásicas"></button>
   </div>
 </section>
 
