@@ -4,11 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Alcobas Modernas | Muebles Isaías</title>
-<meta name="description" content="Catálogo de Alcobas Modernas de Muebles Isaías: conjuntos de dormitorio fabricados a la medida, con envíos a todo Colombia.">
+<meta name="description" content="Catálogo de Alcobas Modernas de Muebles Isaías, con envíos a todo Colombia.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/alcobas-modernas.css">
+<link rel="stylesheet" href="assets/css/salas.css">
+<link rel="stylesheet" href="assets/css/animations.css">
+<link rel="stylesheet" href="assets/css/alcobas-pagina.css">
+<link rel="stylesheet" href="assets/css/whatsapp-float.css">
 </head>
 <body>
 
@@ -49,9 +53,29 @@
   <nav class="site-nav" id="siteNav" aria-label="Navegación principal">
     <ul class="site-nav__list">
       <li><a href="index.html">Inicio</a></li>
-      <li><a href="index.html#salas">Salas</a></li>
-      <li><a href="index.html#comedores">Comedores</a></li>
-      <li><a href="alcobas-modernas.html" class="is-current">Alcobas</a></li>
+      <li class="site-nav__item site-nav__item--dropdown">
+        <button type="button" class="site-nav__dropdown-toggle" id="salasMenuToggle" aria-expanded="false" aria-haspopup="true" aria-controls="salasSubmenu">Salas</button>
+        <ul class="site-nav__submenu" id="salasSubmenu" aria-labelledby="salasMenuToggle">
+          <li><a href="salas.html">Salas Modernas</a></li>
+          <li><a href="salas-clasicas.html">Salas Clásicas</a></li>
+          <li><a href="salas-lineales.html">Salas Lineales</a></li>
+        </ul>
+      </li>
+      <li class="site-nav__item site-nav__item--dropdown">
+        <button type="button" class="site-nav__dropdown-toggle" id="comedoresMenuToggle" aria-expanded="false" aria-haspopup="true" aria-controls="comedoresSubmenu">Comedores</button>
+        <ul class="site-nav__submenu" id="comedoresSubmenu" aria-labelledby="comedoresMenuToggle">
+          <li><a href="comedores-modernos.html">Comedores Modernos</a></li>
+          <li><span class="site-nav__submenu-pending">Comedores Clásicos <small>Próximamente</small></span></li>
+        </ul>
+      </li>
+      <li class="site-nav__item site-nav__item--dropdown">
+        <button type="button" class="site-nav__dropdown-toggle is-current" id="alcobasMenuToggle" aria-expanded="false" aria-haspopup="true" aria-controls="alcobasSubmenu">Alcobas</button>
+        <ul class="site-nav__submenu" id="alcobasSubmenu" aria-labelledby="alcobasMenuToggle">
+          <li><a href="alcobas-modernas.html" class="is-current">Alcobas Modernas</a></li>
+          <li><span class="site-nav__submenu-pending">Alcobas Clásicas <small>Próximamente</small></span></li>
+          <li><span class="site-nav__submenu-pending">Alcobas Lineales <small>Próximamente</small></span></li>
+        </ul>
+      </li>
       <li><a href="index.html#restauracion">Restauración</a></li>
       <li><a href="index.html#ofertas">Ofertas</a></li>
       <li><a href="index.html#contacto">Contáctanos</a></li>
@@ -81,6 +105,138 @@
 <main>
 
   <!-- ============================================= -->
+  <!-- SLIDER — ALCOBAS MODERNAS (9 imágenes reales)  -->
+  <!-- ============================================= -->
+  <section class="hero" id="hero" aria-label="Alcobas Modernas">
+    <div class="hero__track" id="heroTrack">
+
+      <!-- SLIDE 1 — AM1 -->
+      <article class="hero__slide is-active" data-slide="0" aria-hidden="false">
+        <picture class="hero__media">
+          <img src="assets/img/catalogo/alcobas-modernas/slider-alcobas-modernas-1.jpg" alt="Alcobas modernas Muebles Isaías, imagen 1" loading="eager">
+        </picture>
+      </article>
+
+      <!-- SLIDE 2 — AM2 -->
+      <article class="hero__slide" data-slide="1" aria-hidden="true">
+        <picture class="hero__media">
+          <img src="assets/img/catalogo/alcobas-modernas/slider-alcobas-modernas-2.jpg" alt="Alcobas modernas Muebles Isaías, imagen 2" loading="lazy">
+        </picture>
+      </article>
+
+      <!-- SLIDE 3 — S1 -->
+      <article class="hero__slide" data-slide="2" aria-hidden="true">
+        <picture class="hero__media">
+          <img src="assets/img/catalogo/alcobas-modernas/slider-alcobas-modernas-3.jpg" alt="Alcobas modernas Muebles Isaías, imagen 3" loading="lazy">
+        </picture>
+      </article>
+
+      <!-- SLIDE 4 — S2 -->
+      <article class="hero__slide" data-slide="3" aria-hidden="true">
+        <picture class="hero__media">
+          <img src="assets/img/catalogo/alcobas-modernas/slider-alcobas-modernas-4.jpg" alt="Alcobas modernas Muebles Isaías, imagen 4" loading="lazy">
+        </picture>
+      </article>
+
+      <!-- SLIDE 5 — S3 -->
+      <article class="hero__slide" data-slide="4" aria-hidden="true">
+        <picture class="hero__media">
+          <img src="assets/img/catalogo/alcobas-modernas/slider-alcobas-modernas-5.jpg" alt="Alcobas modernas Muebles Isaías, imagen 5" loading="lazy">
+        </picture>
+      </article>
+
+      <!-- SLIDE 6 — S4 -->
+      <article class="hero__slide" data-slide="5" aria-hidden="true">
+        <picture class="hero__media">
+          <img src="assets/img/catalogo/alcobas-modernas/slider-alcobas-modernas-6.jpg" alt="Alcobas modernas Muebles Isaías, imagen 6" loading="lazy">
+        </picture>
+      </article>
+
+      <!-- SLIDE 7 — S5 -->
+      <article class="hero__slide" data-slide="6" aria-hidden="true">
+        <picture class="hero__media">
+          <img src="assets/img/catalogo/alcobas-modernas/slider-alcobas-modernas-7.jpg" alt="Alcobas modernas Muebles Isaías, imagen 7" loading="lazy">
+        </picture>
+      </article>
+
+      <!-- SLIDE 8 — S6 -->
+      <article class="hero__slide" data-slide="7" aria-hidden="true">
+        <picture class="hero__media">
+          <img src="assets/img/catalogo/alcobas-modernas/slider-alcobas-modernas-8.jpg" alt="Alcobas modernas Muebles Isaías, imagen 8" loading="lazy">
+        </picture>
+      </article>
+
+      <!-- SLIDE 9 — S8 -->
+      <article class="hero__slide" data-slide="8" aria-hidden="true">
+        <picture class="hero__media">
+          <img src="assets/img/catalogo/alcobas-modernas/slider-alcobas-modernas-9.jpg" alt="Alcobas modernas Muebles Isaías, imagen 9" loading="lazy">
+        </picture>
+      </article>
+
+    </div>
+
+    <!-- Controles -->
+    <button class="hero__arrow hero__arrow--prev" id="heroPrev" aria-label="Imagen anterior">&#10094;</button>
+    <button class="hero__arrow hero__arrow--next" id="heroNext" aria-label="Siguiente imagen">&#10095;</button>
+
+    <div class="hero__dots" id="heroDots" role="tablist" aria-label="Seleccionar imagen">
+      <button class="hero__dot is-active" data-goto="0" role="tab" aria-selected="true" aria-label="Ver imagen 1"></button>
+      <button class="hero__dot" data-goto="1" role="tab" aria-selected="false" aria-label="Ver imagen 2"></button>
+      <button class="hero__dot" data-goto="2" role="tab" aria-selected="false" aria-label="Ver imagen 3"></button>
+      <button class="hero__dot" data-goto="3" role="tab" aria-selected="false" aria-label="Ver imagen 4"></button>
+      <button class="hero__dot" data-goto="4" role="tab" aria-selected="false" aria-label="Ver imagen 5"></button>
+      <button class="hero__dot" data-goto="5" role="tab" aria-selected="false" aria-label="Ver imagen 6"></button>
+      <button class="hero__dot" data-goto="6" role="tab" aria-selected="false" aria-label="Ver imagen 7"></button>
+      <button class="hero__dot" data-goto="7" role="tab" aria-selected="false" aria-label="Ver imagen 8"></button>
+      <button class="hero__dot" data-goto="8" role="tab" aria-selected="false" aria-label="Ver imagen 9"></button>
+    </div>
+  </section>
+
+  <!-- ============================================= -->
+  <!-- TICKER HORIZONTAL (mismo componente del Home)  -->
+  <!-- ============================================= -->
+  <section class="ticker" aria-label="Información de Muebles Isaías">
+    <div class="ticker__track">
+      <ul class="ticker__group">
+        <li class="ticker__item"><strong>MUEBLES ISAÍAS</strong> · DISEÑOS 100% PERSONALIZADOS</li>
+        <li class="ticker__item">LÍNEA MODERNA</li>
+        <li class="ticker__item">LÍNEA CLÁSICA</li>
+        <li class="ticker__item">LÍNEA LINEAL</li>
+        <li class="ticker__item">RESTAURACIÓN DE MUEBLES</li>
+        <li class="ticker__item">DESPACHAMOS A TODO COLOMBIA</li>
+        <li class="ticker__item">ASESORÍA WHATSAPP <a class="ticker__link" href="https://wa.me/573155588560" target="_blank" rel="noopener">315 558 8560</a></li>
+      </ul>
+      <ul class="ticker__group" aria-hidden="true">
+        <li class="ticker__item"><strong>MUEBLES ISAÍAS</strong> · DISEÑOS 100% PERSONALIZADOS</li>
+        <li class="ticker__item">LÍNEA MODERNA</li>
+        <li class="ticker__item">LÍNEA CLÁSICA</li>
+        <li class="ticker__item">LÍNEA LINEAL</li>
+        <li class="ticker__item">RESTAURACIÓN DE MUEBLES</li>
+        <li class="ticker__item">DESPACHAMOS A TODO COLOMBIA</li>
+        <li class="ticker__item">ASESORÍA WHATSAPP <a class="ticker__link" href="https://wa.me/573155588560" target="_blank" rel="noopener" tabindex="-1">315 558 8560</a></li>
+      </ul>
+      <ul class="ticker__group" aria-hidden="true">
+        <li class="ticker__item"><strong>MUEBLES ISAÍAS</strong> · DISEÑOS 100% PERSONALIZADOS</li>
+        <li class="ticker__item">LÍNEA MODERNA</li>
+        <li class="ticker__item">LÍNEA CLÁSICA</li>
+        <li class="ticker__item">LÍNEA LINEAL</li>
+        <li class="ticker__item">RESTAURACIÓN DE MUEBLES</li>
+        <li class="ticker__item">DESPACHAMOS A TODO COLOMBIA</li>
+        <li class="ticker__item">ASESORÍA WHATSAPP <a class="ticker__link" href="https://wa.me/573155588560" target="_blank" rel="noopener" tabindex="-1">315 558 8560</a></li>
+      </ul>
+      <ul class="ticker__group" aria-hidden="true">
+        <li class="ticker__item"><strong>MUEBLES ISAÍAS</strong> · DISEÑOS 100% PERSONALIZADOS</li>
+        <li class="ticker__item">LÍNEA MODERNA</li>
+        <li class="ticker__item">LÍNEA CLÁSICA</li>
+        <li class="ticker__item">LÍNEA LINEAL</li>
+        <li class="ticker__item">RESTAURACIÓN DE MUEBLES</li>
+        <li class="ticker__item">DESPACHAMOS A TODO COLOMBIA</li>
+        <li class="ticker__item">ASESORÍA WHATSAPP <a class="ticker__link" href="https://wa.me/573155588560" target="_blank" rel="noopener" tabindex="-1">315 558 8560</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============================================= -->
   <!-- IDENTIFICADOR DE CATEGORÍA                     -->
   <!-- ============================================= -->
   <section class="category-banner">
@@ -88,40 +244,152 @@
   </section>
 
   <!-- ============================================= -->
-  <!-- MENSAJE: VENTA INDIVIDUAL Y PERSONALIZACIÓN    -->
+  <!-- TARJETAS — ALCOBAS MODERNAS (9 referencias)    -->
   <!-- ============================================= -->
-  <section class="notice-band">
-    <p>Nuestros productos también se fabrican y venden por separado y/o pueden personalizarse.</p>
-  </section>
+  <section class="product-grid product-grid--alcobas-modernas" aria-label="Productos de Alcobas Modernas">
 
-  <!-- ============================================= -->
-  <!-- GRID DE TARJETAS DE PRODUCTO                   -->
-  <!-- ============================================= -->
-  <section class="product-grid" aria-label="Productos de Alcobas Modernas">
-
-    <article class="product-card" data-product-id="alcoba-moderna-conjunto-01">
+    <article class="product-card" data-product-id="alcoba-moderna-01">
       <div class="product-card__media">
-        <img src="LAPTOP%20HOME/ALCOBAS%20MODERNAS/SALA%20M1.png" alt="Conjunto de muebles de dormitorio de madera modernos" loading="eager">
+        <img src="assets/img/catalogo/alcobas-modernas/alcoba-moderna-1.jpg" alt="Alcoba Moderna 1" loading="eager">
       </div>
       <div class="product-card__body">
-        <h3 class="product-card__title">Conjunto de muebles de dormitorio de madera modernos | Ideas de diseño para dormitorios minimalistas y acogedores</h3>
-        <p class="product-card__description">Crea un refugio tranquilo y elegante con este moderno conjunto de muebles de dormitorio de madera. Con una elegante cama con plataforma, mesitas de noche a juego, un amplio armario y una cómoda elegante, este conjunto combina funcionalidad con una estética cálida. Los tonos neutros, la iluminación suave y las líneas depuradas lo hacen perfecto para quienes buscan diseñar un dormitorio acogedor y ordenado. Inspiración ideal para interiores contemporáneos que transmiten una sensación de relajación y sofisticación.</p>
-        <div class="product-card__composicion">
-          <span class="product-card__composicion-label">Composición del conjunto:</span>
-          <ul>
-            <li>Cama con plataforma</li>
-            <li>Mesitas de noche a juego</li>
-            <li>Armario</li>
-            <li>Cómoda</li>
-          </ul>
-        </div>
-        <button class="btn btn--primary product-card__add" data-add-to-cart
-          data-product-name="Conjunto de muebles de dormitorio de madera modernos | Ideas de diseño para dormitorios minimalistas y acogedores">
+        <h3 class="product-card__title">Alcoba Moderna 1</h3>
+        <p class="product-card__description">Diseño contemporáneo para dormitorios que buscan una estética moderna, elegante y acogedora.</p>
+        <button class="btn btn--primary product-card__add" data-add-to-cart data-product-name="Alcoba Moderna 1">
           ADICIONAR AL CARRITO
         </button>
       </div>
     </article>
 
+    <article class="product-card" data-product-id="alcoba-moderna-02">
+      <div class="product-card__media">
+        <img src="assets/img/catalogo/alcobas-modernas/alcoba-moderna-2.jpg" alt="Alcoba Moderna 2" loading="lazy">
+      </div>
+      <div class="product-card__body">
+        <h3 class="product-card__title">Alcoba Moderna 2</h3>
+        <p class="product-card__description">Referencia de estilo moderno, pensada para aportar presencia y armonía a dormitorios contemporáneos.</p>
+        <button class="btn btn--primary product-card__add" data-add-to-cart data-product-name="Alcoba Moderna 2">
+          ADICIONAR AL CARRITO
+        </button>
+      </div>
+    </article>
+
+    <article class="product-card" data-product-id="alcoba-moderna-03">
+      <div class="product-card__media">
+        <img src="assets/img/catalogo/alcobas-modernas/alcoba-moderna-3.jpg" alt="Alcoba Moderna 3" loading="lazy">
+      </div>
+      <div class="product-card__body">
+        <h3 class="product-card__title">Alcoba Moderna 3</h3>
+        <p class="product-card__description">Propuesta de alcoba moderna con una composición visual elegante y adaptable a diferentes ambientes.</p>
+        <button class="btn btn--primary product-card__add" data-add-to-cart data-product-name="Alcoba Moderna 3">
+          ADICIONAR AL CARRITO
+        </button>
+      </div>
+    </article>
+
+    <article class="product-card" data-product-id="alcoba-moderna-04">
+      <div class="product-card__media">
+        <img src="assets/img/catalogo/alcobas-modernas/alcoba-moderna-4.jpg" alt="Alcoba Moderna 4" loading="lazy">
+      </div>
+      <div class="product-card__body">
+        <h3 class="product-card__title">Alcoba Moderna 4</h3>
+        <p class="product-card__description">Diseño moderno de líneas limpias para dormitorios que buscan comodidad y estilo.</p>
+        <button class="btn btn--primary product-card__add" data-add-to-cart data-product-name="Alcoba Moderna 4">
+          ADICIONAR AL CARRITO
+        </button>
+      </div>
+    </article>
+
+    <article class="product-card" data-product-id="alcoba-moderna-05">
+      <div class="product-card__media">
+        <img src="assets/img/catalogo/alcobas-modernas/alcoba-moderna-5.jpg" alt="Alcoba Moderna 5" loading="lazy">
+      </div>
+      <div class="product-card__body">
+        <h3 class="product-card__title">Alcoba Moderna 5</h3>
+        <p class="product-card__description">Referencia de estilo moderno con una presencia sobria y acogedora para diferentes ambientes.</p>
+        <button class="btn btn--primary product-card__add" data-add-to-cart data-product-name="Alcoba Moderna 5">
+          ADICIONAR AL CARRITO
+        </button>
+      </div>
+    </article>
+
+    <article class="product-card" data-product-id="alcoba-moderna-06">
+      <div class="product-card__media">
+        <img src="assets/img/catalogo/alcobas-modernas/alcoba-moderna-6.jpg" alt="Alcoba Moderna 6" loading="lazy">
+      </div>
+      <div class="product-card__body">
+        <h3 class="product-card__title">Alcoba Moderna 6</h3>
+        <p class="product-card__description">Propuesta moderna de aire elegante, ideal para quienes buscan una alcoba con carácter.</p>
+        <button class="btn btn--primary product-card__add" data-add-to-cart data-product-name="Alcoba Moderna 6">
+          ADICIONAR AL CARRITO
+        </button>
+      </div>
+    </article>
+
+    <article class="product-card" data-product-id="alcoba-moderna-07">
+      <div class="product-card__media">
+        <img src="assets/img/catalogo/alcobas-modernas/alcoba-moderna-7.jpg" alt="Alcoba Moderna 7" loading="lazy">
+      </div>
+      <div class="product-card__body">
+        <h3 class="product-card__title">Alcoba Moderna 7</h3>
+        <p class="product-card__description">Referencia moderna de ambiente cálido y acogedor, pensada para el descanso diario.</p>
+        <button class="btn btn--primary product-card__add" data-add-to-cart data-product-name="Alcoba Moderna 7">
+          ADICIONAR AL CARRITO
+        </button>
+      </div>
+    </article>
+
+    <article class="product-card" data-product-id="alcoba-moderna-08">
+      <div class="product-card__media">
+        <img src="assets/img/catalogo/alcobas-modernas/alcoba-moderna-8.jpg" alt="Alcoba Moderna 8" loading="lazy">
+      </div>
+      <div class="product-card__body">
+        <h3 class="product-card__title">Alcoba Moderna 8</h3>
+        <p class="product-card__description">Alcoba de estilo moderno con una composición cálida, adaptable a diferentes espacios.</p>
+        <button class="btn btn--primary product-card__add" data-add-to-cart data-product-name="Alcoba Moderna 8">
+          ADICIONAR AL CARRITO
+        </button>
+      </div>
+    </article>
+
+    <article class="product-card" data-product-id="alcoba-moderna-09">
+      <div class="product-card__media">
+        <img src="assets/img/catalogo/alcobas-modernas/alcoba-moderna-9.jpg" alt="Alcoba Moderna 9" loading="lazy">
+      </div>
+      <div class="product-card__body">
+        <h3 class="product-card__title">Alcoba Moderna 9</h3>
+        <p class="product-card__description">Diseño moderno y funcional, pensado para armonizar con distintos espacios.</p>
+        <button class="btn btn--primary product-card__add" data-add-to-cart data-product-name="Alcoba Moderna 9">
+          ADICIONAR AL CARRITO
+        </button>
+      </div>
+    </article>
+
+  </section>
+
+  <!-- ============================================= -->
+  <!-- TEXTO COMERCIAL (después de los productos)     -->
+  <!-- ============================================= -->
+  <section class="commercial-note">
+    <p class="commercial-note__text">Nuestros productos también se venden por separado y/o pueden personalizarse.</p>
+  </section>
+
+  <!-- ============================================= -->
+  <!-- BLOQUE EDITORIAL — PRIMER BLOQUE: FABRICACIÓN  -->
+  <!-- Cada nuevo bloque del proceso se agrega como   -->
+  <!-- otro <article class="editorial-block"> dentro  -->
+  <!-- de esta sección. La imagen es una ilustración. -->
+  <!-- ============================================= -->
+  <section class="editorial">
+    <article class="editorial-block">
+      <div class="editorial-block__media">
+        <img class="editorial-block__image" src="assets/img/editorial/proceso-fabricacion.webp" width="1024" height="1024" loading="lazy" alt="Ilustración de un operario cortando una tabla de madera en una sierra de mesa, con protección auditiva y gafas, dentro de un taller">
+      </div>
+      <div class="editorial-block__text">
+        <h2 class="editorial-block__title">Fabricamos con precisión</h2>
+        <p class="editorial-block__copy">Cada mueble comienza con un proceso de trabajo cuidadoso, donde la precisión y la dedicación son esenciales para lograr un buen resultado.</p>
+      </div>
+    </article>
   </section>
 
   <!-- ============================================= -->
@@ -138,18 +406,148 @@
   </section>
 
   <!-- ============================================= -->
-  <!-- MEDIOS DE PAGO — ESPACIO RESERVADO             -->
+  <!-- CONOCE NUESTROS MEDIOS DE PAGO                 -->
+  <!-- Recurso real: fotografia_-_2025-01-21t110024   -->
+  <!-- .635.webp (Nequi / Bancolombia / Daviplata /    -->
+  <!-- Davivienda), copiado sin alterar su contenido.  -->
   <!-- ============================================= -->
+  <section class="category-banner">
+    <span class="category-banner__box">CONOCE NUESTROS MEDIOS DE PAGO</span>
+  </section>
+
   <section class="payment-band">
-    <span class="payment-band__label">Medios de pago</span>
-    <div class="payment-band__placeholder" aria-label="Espacio reservado para medios de pago (recurso pendiente)">
-      <!-- PENDIENTE: insertar aquí la imagen oficial de medios de pago cuando esté disponible -->
+    <img class="payment-band__image" src="assets/img/pagos/medios-de-pago-v2.webp" alt="Medios de pago disponibles: Nequi, Bancolombia, Daviplata, Davivienda y datáfono Bold">
+  </section>
+
+  <!-- ============================================= -->
+  <!-- ATENCIÓN AL CLIENTE + COTIZACIÓN               -->
+  <!-- ============================================= -->
+  <section class="info-boxes" aria-label="Atención al cliente y cotización">
+    <article class="info-box">
+      <h2 class="info-box__title">ATENCIÓN AL CLIENTE</h2>
+      <p class="info-box__text">Lunes a Sábado de 8:00 a.m. a 5:00 p.m.</p>
+    </article>
+
+    <a class="info-box info-box--link" href="https://wa.me/573155588560" target="_blank" rel="noopener">
+      <h2 class="info-box__title">COTIZA CON NOSOTROS</h2>
+      <p class="info-box__text">WhatsApp: 315 558 8560</p>
+    </a>
+  </section>
+
+  <!-- ============================================= -->
+  <!-- CONTÁCTENOS (envío por WhatsApp de Muebles     -->
+  <!-- Isaías: 315 558 8560). Lógica en               -->
+  <!-- assets/js/contact-whatsapp.js                  -->
+  <!-- ============================================= -->
+  <section class="contact-section" id="contactenos" aria-labelledby="contactTitle">
+    <div class="contact-box">
+      <h2 class="contact-box__title" id="contactTitle">Contáctenos</h2>
+      <p class="contact-box__lead">Cuéntanos qué necesitas y te escribimos por WhatsApp en minutos.</p>
+
+      <form class="contact-form" id="contactForm" novalidate>
+        <div class="contact-form__row">
+          <div class="contact-form__field">
+            <label for="cfName">Nombre</label>
+            <input type="text" id="cfName" name="nombre" placeholder="Tu nombre" autocomplete="name" required aria-describedby="cfNameError">
+            <span class="contact-form__error" id="cfNameError" role="alert"></span>
+          </div>
+          <div class="contact-form__field">
+            <label for="cfPhone">Teléfono (opcional)</label>
+            <input type="tel" id="cfPhone" name="telefono" placeholder="Tu teléfono" inputmode="tel" autocomplete="tel">
+          </div>
+        </div>
+
+        <div class="contact-form__field">
+          <label for="cfProduct">Producto de interés</label>
+          <select id="cfProduct" name="producto" required aria-describedby="cfProductError">
+            <option value="" disabled>Selecciona un producto</option>
+            <option value="Muebles Isaías">Muebles Isaías</option>
+            <option value="Salas">Salas</option>
+            <option value="Alcobas" selected>Alcobas</option>
+            <option value="Comedores">Comedores</option>
+            <option value="Camas">Camas</option>
+            <option value="Sofás">Sofás</option>
+            <option value="Sofacamas">Sofacamas</option>
+            <option value="Consolas">Consolas</option>
+            <option value="Closets">Closets</option>
+            <option value="Mesas">Mesas</option>
+            <option value="Decoración">Decoración</option>
+            <option value="Restauración de muebles">Restauración de muebles</option>
+          </select>
+          <span class="contact-form__error" id="cfProductError" role="alert"></span>
+        </div>
+
+        <div class="contact-form__field">
+          <label for="cfMessage">Mensaje</label>
+          <textarea id="cfMessage" name="mensaje" rows="4" placeholder="Cuéntanos qué necesitas" required aria-describedby="cfMessageError"></textarea>
+          <span class="contact-form__error" id="cfMessageError" role="alert"></span>
+        </div>
+
+        <button type="submit" class="btn btn--primary contact-form__submit">ENVIAR POR WHATSAPP</button>
+      </form>
     </div>
   </section>
 
 </main>
 
+<!-- ============================================= -->
+<!-- PIE DE PÁGINA — 4 columnas                      -->
+<!-- Redes: solo se muestran los nombres entregados; -->
+<!-- sin enlaces hasta contar con las URL reales.    -->
+<!-- ============================================= -->
+<footer class="site-footer">
+  <div class="site-footer__grid">
+
+    <div class="site-footer__col site-footer__col--brand">
+      <a href="index.html" class="site-footer__logo-link" aria-label="Muebles Isaías, ir al inicio">
+        <img src="assets/img/logo/logo-muebles-isaias.jpg" alt="Muebles Isaías" class="site-footer__logo">
+      </a>
+      <p>Fabricamos toda clase de muebles: lineales, clásicos y modernos.</p>
+      <p>Remodelación de muebles, hojillados, tapizados y pintura, con diferentes acabados.</p>
+      <a href="https://wa.me/573155588560" class="site-footer__cta" target="_blank" rel="noopener">Cotiza con nosotros</a>
+      <a href="https://wa.me/573155588560" class="site-footer__whatsapp" target="_blank" rel="noopener">WhatsApp: 315 5588560</a>
+    </div>
+
+    <nav class="site-footer__col" aria-label="Todos nuestros productos">
+      <h3 class="site-footer__title">Todos nuestros productos</h3>
+      <ul class="site-footer__list">
+        <li><a href="salas.html">Salas</a></li>
+        <li><a href="comedores-modernos.html">Comedores</a></li>
+        <li><a href="alcobas-modernas.html">Alcobas</a></li>
+        <li><a href="index.html#restauracion">Restauración</a></li>
+        <li><a href="index.html#ofertas">Ofertas</a></li>
+      </ul>
+    </nav>
+
+    <div class="site-footer__col">
+      <h3 class="site-footer__title">Contacto</h3>
+      <ul class="site-footer__list">
+        <li>WhatsApp: <a href="https://wa.me/573155588560" target="_blank" rel="noopener">315 5588560</a></li>
+        <li>Correo: <a href="mailto:mueblesclasicosisaias@hotmail.com">mueblesclasicosisaias@hotmail.com</a></li>
+        <li>Contacto adicional: 3208388969</li>
+      </ul>
+    </div>
+
+    <div class="site-footer__col">
+      <h3 class="site-footer__title">Síguenos</h3>
+      <ul class="site-footer__list site-footer__social">
+        <li><svg class="site-footer__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg><span>Facebook: Muebles Isaías</span></li>
+        <li><svg class="site-footer__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="0.6" fill="currentColor"/></svg><span>Instagram: muebles_clasicos_tallas</span></li>
+        <li><svg class="site-footer__icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg><span>TikTok: tallasydiseños_Isaias</span></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <p class="site-footer__copy">© 2026 Muebles Isaías. Todos los derechos reservados.</p>
+</footer>
+
 <script src="assets/js/site-nav.js"></script>
+<script src="assets/js/nav-dropdown-multi.js"></script>
 <script src="assets/js/cart.js"></script>
+<script src="assets/js/hero-slider.js"></script>
+<script src="assets/js/contact-whatsapp.js"></script>
+<script src="assets/js/animations.js"></script>
+<script src="assets/js/whatsapp-float.js"></script>
 </body>
 </html>

@@ -1,0 +1,166 @@
+/* ==========================================================
+   Desplegables del menú (Salas, Comedores, Alcobas).
+   Copia literal del bloque de menú desplegable de salas.css, para
+   las páginas que no cargan salas.css (p. ej. comedores-modernos.html):
+   así el menú se despliega sin que otras reglas de salas.css cambien
+   la apariencia de esa página.
+   ========================================================== */
+
+.site-nav__item--dropdown {
+  position: relative;
+}
+
+.site-nav__dropdown-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--color-cream);
+  transition: color 200ms ease;
+}
+
+.site-nav__dropdown-toggle::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  margin-top: -3px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform 220ms ease;
+}
+
+.site-nav__dropdown-toggle:hover,
+.site-nav__dropdown-toggle.is-current,
+.site-nav__item--dropdown.is-open .site-nav__dropdown-toggle {
+  color: var(--color-gold-light);
+}
+
+.site-nav__item--dropdown.is-open .site-nav__dropdown-toggle::after {
+  transform: rotate(-135deg);
+  margin-top: 3px;
+}
+
+.site-nav__submenu {
+  position: absolute;
+  top: 100%;
+  left: -1rem;
+  z-index: 25;
+  min-width: 230px;
+  margin: 0;
+  padding: 0.5rem 0;
+  list-style: none;
+  background: #241c16;
+  border: 1px solid rgba(201,161,90,0.25);
+  border-top: 2px solid var(--color-gold);
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 14px 30px rgba(0,0,0,0.35);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: opacity 220ms ease, transform 220ms ease, visibility 0s linear 220ms;
+}
+
+.site-nav__item--dropdown.is-open .site-nav__submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: opacity 220ms ease, transform 220ms ease, visibility 0s;
+}
+
+.site-nav__submenu a,
+.site-nav__submenu-pending {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.7rem 1.2rem;
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.site-nav__submenu a {
+  color: var(--color-cream);
+  text-decoration: none;
+  transition: color 200ms ease, background 200ms ease;
+}
+
+.site-nav__submenu a:hover,
+.site-nav__submenu a:focus-visible,
+.site-nav__submenu a.is-current {
+  color: var(--color-gold-light);
+  background: rgba(201,161,90,0.08);
+}
+
+.site-nav__submenu-pending {
+  color: var(--color-cream);
+  opacity: 0.5;
+  cursor: default;
+}
+
+.site-nav__submenu-pending small {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-gold-light);
+}
+
+/* Menú hamburguesa (móvil): el submenú se despliega dentro del menú */
+@media (max-width: 767px) {
+  .site-nav.is-open {
+    max-height: 640px;
+  }
+
+  .site-nav__item--dropdown {
+    width: 100%;
+  }
+
+  .site-nav__dropdown-toggle {
+    min-height: 32px;
+  }
+
+  .site-nav__submenu {
+    position: static;
+    min-width: 0;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+    margin: 0 0 0 0.3rem;
+    background: transparent;
+    border: none;
+    border-left: 1px solid rgba(201,161,90,0.4);
+    border-radius: 0;
+    box-shadow: none;
+    transform: none;
+    transition: max-height 280ms ease, opacity 220ms ease, visibility 0s linear 280ms;
+  }
+
+  .site-nav__item--dropdown.is-open .site-nav__submenu {
+    max-height: 220px;
+    margin-top: 0.4rem;
+    transition: max-height 280ms ease, opacity 220ms ease, visibility 0s;
+  }
+
+  .site-nav__submenu a,
+  .site-nav__submenu-pending {
+    min-height: 44px;
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-nav__submenu,
+  .site-nav__item--dropdown.is-open .site-nav__submenu,
+  .site-nav__dropdown-toggle::after {
+    transition: none;
+  }
+}

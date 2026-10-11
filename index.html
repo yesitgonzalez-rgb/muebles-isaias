@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/style.css?v=20260927f">
 </head>
 <body id="inicio">
 
@@ -49,7 +49,7 @@
   <nav class="site-nav" id="siteNav" aria-label="Navegación principal">
     <ul class="site-nav__list">
       <li><a href="#inicio">Inicio</a></li>
-      <li><a href="#salas">Salas</a></li>
+      <li><a href="salas.html">Salas</a></li>
       <li><a href="#comedores">Comedores</a></li>
       <li><a href="alcobas-modernas.html">Alcobas</a></li>
       <li><a href="#restauracion">Restauración</a></li>
@@ -58,10 +58,28 @@
     </ul>
     <a href="https://wa.me/573155588560" class="btn btn--primary site-nav__cta" target="_blank" rel="noopener">COTIZAR POR WHATSAPP</a>
   </nav>
+
+  <button class="cart-toggle" id="cartToggle" aria-expanded="false" aria-controls="cartPanel" aria-label="Ver carrito de cotización">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+      <circle cx="9" cy="21" r="1.4"/>
+      <circle cx="18" cy="21" r="1.4"/>
+      <path d="M2.5 3h2.4l2.1 11.4a2 2 0 0 0 2 1.6h7.6a2 2 0 0 0 2-1.6L21 7H6"/>
+    </svg>
+    <span class="cart-toggle__count" id="cartCount" aria-live="polite">0</span>
+  </button>
+
+  <div class="cart-panel" id="cartPanel" data-cart-rich>
+    <h2 class="cart-panel__title">Carrito de cotización</h2>
+    <p class="cart-panel__hint">Selecciona las categorías que te interesan. No es una compra en línea: al finalizar, te contactamos por WhatsApp para cotizar.</p>
+    <ul class="cart-panel__list" id="cartList">
+      <li class="cart-panel__empty" id="cartEmpty">Todavía no has agregado productos.</li>
+    </ul>
+    <a href="#" class="btn btn--primary cart-panel__cta" id="cartQuoteBtn" target="_blank" rel="noopener">COTIZAR POR WHATSAPP</a>
+  </div>
 </header>
 
 <!-- ============================================= -->
-<!-- SLIDER PRINCIPAL DEL HOME (6 de 9 slides)         -->
+<!-- SLIDER PRINCIPAL DEL HOME (8 de 9 slides)         -->
 <!-- ============================================= -->
 <section class="hero" id="hero" aria-label="Slider principal">
   <div class="hero__track" id="heroTrack">
@@ -108,9 +126,23 @@
       </picture>
     </article>
 
-    <!-- SLIDES 7, 8 y 9 — PENDIENTES: aún no hay imágenes reales.
-         Al agregarlas: un <article class="hero__slide"> por imagen (data-slide="6", "7", "8")
-         y un <button class="hero__dot"> más por cada una en .hero__dots. -->
+    <!-- SLIDE 7 — Salas Modernas — SM1 -->
+    <article class="hero__slide" data-slide="6" aria-hidden="true">
+      <picture class="hero__media">
+        <img src="assets/img/hero/salas-modernas-sm1.jpg" alt="Salas modernas Muebles Isaías" loading="lazy">
+      </picture>
+    </article>
+
+    <!-- SLIDE 8 — Salas Modernas — SM2 -->
+    <article class="hero__slide" data-slide="7" aria-hidden="true">
+      <picture class="hero__media">
+        <img src="assets/img/hero/salas-modernas-sm2.jpg" alt="Salas modernas Muebles Isaías" loading="lazy">
+      </picture>
+    </article>
+
+    <!-- SLIDE 9 — PENDIENTE: aún no hay imagen real.
+         Al agregarla: un <article class="hero__slide"> (data-slide="8")
+         y un <button class="hero__dot"> más en .hero__dots. -->
 
   </div>
 
@@ -125,6 +157,52 @@
     <button class="hero__dot" data-goto="3" role="tab" aria-selected="false" aria-label="Ver comedores modernos, imagen 1"></button>
     <button class="hero__dot" data-goto="4" role="tab" aria-selected="false" aria-label="Ver comedores modernos, imagen 2"></button>
     <button class="hero__dot" data-goto="5" role="tab" aria-selected="false" aria-label="Ver salas clásicas"></button>
+    <button class="hero__dot" data-goto="6" role="tab" aria-selected="false" aria-label="Ver salas modernas, imagen 1"></button>
+    <button class="hero__dot" data-goto="7" role="tab" aria-selected="false" aria-label="Ver salas modernas, imagen 2"></button>
+  </div>
+</section>
+
+<!-- ============================================= -->
+<!-- TICKER HORIZONTAL (debajo del slider)          -->
+<!-- ============================================= -->
+<section class="ticker" aria-label="Información de Muebles Isaías">
+  <div class="ticker__track">
+    <ul class="ticker__group">
+      <li class="ticker__item"><strong>MUEBLES ISAÍAS</strong> · DISEÑOS 100% PERSONALIZADOS</li>
+      <li class="ticker__item">LÍNEA MODERNA</li>
+      <li class="ticker__item">LÍNEA CLÁSICA</li>
+      <li class="ticker__item">LÍNEA LINEAL</li>
+      <li class="ticker__item">RESTAURACIÓN DE MUEBLES</li>
+      <li class="ticker__item">DESPACHAMOS A TODO COLOMBIA</li>
+      <li class="ticker__item">ASESORÍA WHATSAPP <a class="ticker__link" href="https://wa.me/573155588560" target="_blank" rel="noopener">315 558 8560</a></li>
+    </ul>
+    <ul class="ticker__group" aria-hidden="true">
+      <li class="ticker__item"><strong>MUEBLES ISAÍAS</strong> · DISEÑOS 100% PERSONALIZADOS</li>
+      <li class="ticker__item">LÍNEA MODERNA</li>
+      <li class="ticker__item">LÍNEA CLÁSICA</li>
+      <li class="ticker__item">LÍNEA LINEAL</li>
+      <li class="ticker__item">RESTAURACIÓN DE MUEBLES</li>
+      <li class="ticker__item">DESPACHAMOS A TODO COLOMBIA</li>
+      <li class="ticker__item">ASESORÍA WHATSAPP <a class="ticker__link" href="https://wa.me/573155588560" target="_blank" rel="noopener" tabindex="-1">315 558 8560</a></li>
+    </ul>
+    <ul class="ticker__group" aria-hidden="true">
+      <li class="ticker__item"><strong>MUEBLES ISAÍAS</strong> · DISEÑOS 100% PERSONALIZADOS</li>
+      <li class="ticker__item">LÍNEA MODERNA</li>
+      <li class="ticker__item">LÍNEA CLÁSICA</li>
+      <li class="ticker__item">LÍNEA LINEAL</li>
+      <li class="ticker__item">RESTAURACIÓN DE MUEBLES</li>
+      <li class="ticker__item">DESPACHAMOS A TODO COLOMBIA</li>
+      <li class="ticker__item">ASESORÍA WHATSAPP <a class="ticker__link" href="https://wa.me/573155588560" target="_blank" rel="noopener" tabindex="-1">315 558 8560</a></li>
+    </ul>
+    <ul class="ticker__group" aria-hidden="true">
+      <li class="ticker__item"><strong>MUEBLES ISAÍAS</strong> · DISEÑOS 100% PERSONALIZADOS</li>
+      <li class="ticker__item">LÍNEA MODERNA</li>
+      <li class="ticker__item">LÍNEA CLÁSICA</li>
+      <li class="ticker__item">LÍNEA LINEAL</li>
+      <li class="ticker__item">RESTAURACIÓN DE MUEBLES</li>
+      <li class="ticker__item">DESPACHAMOS A TODO COLOMBIA</li>
+      <li class="ticker__item">ASESORÍA WHATSAPP <a class="ticker__link" href="https://wa.me/573155588560" target="_blank" rel="noopener" tabindex="-1">315 558 8560</a></li>
+    </ul>
   </div>
 </section>
 
@@ -141,6 +219,30 @@
 </section>
 
 <!-- ============================================= -->
+<!-- VIDEO + HISTORIA DE MUEBLES ISAÍAS             -->
+<!-- ============================================= -->
+<section class="story" aria-label="Historia de Muebles Isaías">
+  <div class="story__inner">
+    <div class="story__media">
+      <video class="story__video" controls playsinline preload="metadata" aria-label="Video de Muebles Isaías">
+        <source src="assets/video/video-muebles-isaias.mp4" type="video/mp4">
+        Tu navegador no puede reproducir este video.
+      </video>
+    </div>
+
+    <div class="story__text">
+      <p class="story__eyebrow">MUEBLES ISAÍAS</p>
+      <h2 class="story__title">Más de 25 años creando muebles para hogares colombianos</h2>
+      <p>Durante más de 25 años hemos trabajado en la fabricación de muebles, combinando experiencia, dedicación y atención a cada detalle.</p>
+      <p>En Muebles Isaías desarrollamos diferentes estilos para crear espacios que reflejen la personalidad de cada hogar: diseños Modernos, Clásicos y Lineales, además de soluciones personalizadas según las necesidades de nuestros clientes.</p>
+      <p>Nuestro trabajo nace de la experiencia de fabricar muebles con dedicación y del compromiso de acompañar a cada cliente en la elección de sus espacios.</p>
+      <p class="story__highlight">Fabricamos y despachamos a todo Colombia.</p>
+      <p class="story__contact">Asesoría por WhatsApp: <a href="https://wa.me/573155588560" target="_blank" rel="noopener">315 558 8560</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================= -->
 <!-- CATEGORÍAS PRINCIPALES                         -->
 <!-- ============================================= -->
 <section class="categories" id="catalogo-modernos" aria-label="Categorías de muebles">
@@ -149,7 +251,7 @@
 
   <div class="categories__grid">
 
-    <article class="category-card" id="salas">
+    <article class="category-card" data-product-id="salas" id="salas">
       <div class="category-card__visual">
         <picture>
           <source media="(max-width: 767px)" srcset="assets/img/hero/moderno-sala-mobile.jpg">
@@ -162,9 +264,12 @@
         <li><span class="style-item is-pending" data-categoria="salas-clasicas" aria-disabled="true"><span class="style-item__name">Clásicas</span><span class="style-item__state visually-hidden">Próximamente, aún no disponible</span></span></li>
         <li><span class="style-item is-pending" data-categoria="salas-lineales" aria-disabled="true"><span class="style-item__name">Lineales</span><span class="style-item__state visually-hidden">Próximamente, aún no disponible</span></span></li>
       </ul>
+      <div class="category-card__actions">
+        <button type="button" class="btn btn--primary category-card__add" data-add-to-cart data-product-name="Salas" data-product-img="assets/img/hero/moderno-sala-desktop.jpg" data-product-desc="Diseños para crear espacios de reunión y descanso.">ADICIONAR AL CARRITO</button>
+      </div>
     </article>
 
-    <article class="category-card" id="comedores">
+    <article class="category-card" data-product-id="comedores" id="comedores">
       <div class="category-card__visual">
         <picture>
           <source media="(max-width: 767px)" srcset="assets/img/hero/moderno-comedor-mobile.jpg">
@@ -177,9 +282,12 @@
         <li><span class="style-item is-pending" data-categoria="comedores-clasicos" aria-disabled="true"><span class="style-item__name">Clásicos</span><span class="style-item__state">Próximamente<span class="visually-hidden">, aún no disponible</span></span></span></li>
         <li><span class="style-item is-pending" data-categoria="comedores-lineales" aria-disabled="true"><span class="style-item__name">Lineales</span><span class="style-item__state visually-hidden">Próximamente, aún no disponible</span></span></li>
       </ul>
+      <div class="category-card__actions">
+        <button type="button" class="btn btn--primary category-card__add" data-add-to-cart data-product-name="Comedores" data-product-img="assets/img/hero/moderno-comedor-desktop.jpg" data-product-desc="Diseños para crear espacios de comida y encuentro.">ADICIONAR AL CARRITO</button>
+      </div>
     </article>
 
-    <article class="category-card">
+    <article class="category-card" data-product-id="alcobas">
       <div class="category-card__visual">
         <picture>
           <source media="(max-width: 767px)" srcset="assets/img/hero/moderno-alcoba-mobile.jpg">
@@ -192,6 +300,9 @@
         <li><span class="style-item is-pending" data-categoria="alcobas-clasicas" aria-disabled="true"><span class="style-item__name">Clásicas</span><span class="style-item__state">Próximamente<span class="visually-hidden">, aún no disponible</span></span></span></li>
         <li><span class="style-item is-pending" data-categoria="alcobas-lineales" aria-disabled="true"><span class="style-item__name">Lineales</span><span class="style-item__state visually-hidden">Próximamente, aún no disponible</span></span></li>
       </ul>
+      <div class="category-card__actions">
+        <button type="button" class="btn btn--primary category-card__add" data-add-to-cart data-product-name="Alcobas" data-product-img="assets/img/hero/moderno-alcoba-desktop.jpg" data-product-desc="Diseños para crear espacios de descanso y privacidad.">ADICIONAR AL CARRITO</button>
+      </div>
     </article>
 
   </div>
@@ -275,7 +386,43 @@
     </div>
   </div>
 
-  <a href="https://wa.me/573155588560" class="btn btn--primary making__cta" target="_blank" rel="noopener">COTIZAR POR WHATSAPP</a>
+  <!-- MÓDULO DE CONTACTO: ¿CÓMO PODEMOS AYUDARTE? -->
+  <div class="contact-module">
+    <div class="contact-module__intro">
+      <h3 class="contact-module__title">¿CÓMO PODEMOS AYUDARTE?</h3>
+      <p class="contact-module__lead">Cuéntanos qué mueble o información necesitas y recibe asesoría personalizada por WhatsApp.</p>
+
+      <div class="contact-module__info">
+        <p class="contact-module__brand">MUEBLES ISAÍAS</p>
+        <p class="contact-module__line">WhatsApp: <a href="https://wa.me/573155588560" target="_blank" rel="noopener">315 558 8560</a></p>
+        <p class="contact-module__line">Fabricamos y despachamos a todo Colombia.</p>
+      </div>
+    </div>
+
+    <ul class="contact-module__options">
+      <li>
+        <a class="contact-option" href="https://wa.me/573155588560?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20los%20muebles%20de%20Muebles%20Isa%C3%ADas." target="_blank" rel="noopener">
+          <span class="contact-option__title">QUIERO INFORMACIÓN</span>
+          <span class="contact-option__desc">Para conocer referencias, estilos o productos.</span>
+          <span class="contact-option__go">Escribir por WhatsApp &rarr;</span>
+        </a>
+      </li>
+      <li>
+        <a class="contact-option" href="https://wa.me/573155588560?text=Hola%2C%20quiero%20solicitar%20una%20cotizaci%C3%B3n%20de%20muebles%20con%20Muebles%20Isa%C3%ADas." target="_blank" rel="noopener">
+          <span class="contact-option__title">QUIERO COTIZAR</span>
+          <span class="contact-option__desc">Para solicitar información y cotización sobre muebles.</span>
+          <span class="contact-option__go">Escribir por WhatsApp &rarr;</span>
+        </a>
+      </li>
+      <li>
+        <a class="contact-option" href="https://wa.me/573155588560?text=Hola%2C%20quiero%20informaci%C3%B3n%20para%20realizar%20un%20pedido%20con%20Muebles%20Isa%C3%ADas." target="_blank" rel="noopener">
+          <span class="contact-option__title">QUIERO HACER UN PEDIDO</span>
+          <span class="contact-option__desc">Para usuarios que ya tienen definida una referencia o necesidad.</span>
+          <span class="contact-option__go">Escribir por WhatsApp &rarr;</span>
+        </a>
+      </li>
+    </ul>
+  </div>
 </section>
 
 <!-- ============================================= -->
@@ -289,7 +436,7 @@
 
   <nav class="site-footer__nav" aria-label="Navegación del pie de página">
     <a href="#inicio">Inicio</a>
-    <a href="#salas">Salas</a>
+    <a href="salas.html">Salas</a>
     <a href="#comedores">Comedores</a>
     <a href="alcobas-modernas.html">Alcobas</a>
     <a href="#restauracion">Restauración</a>
@@ -302,7 +449,17 @@
   <p class="site-footer__copy">© 2026 Muebles Isaías. Todos los derechos reservados.</p>
 </footer>
 
+<!-- ============================================= -->
+<!-- BOTÓN FLOTANTE DE WHATSAPP                     -->
+<!-- ============================================= -->
+<a class="wa-float" href="https://wa.me/573155588560?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20los%20muebles%20de%20Muebles%20Isa%C3%ADas." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp a Muebles Isaías">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.1a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.1 8.1 0 1 1 12 20.1Zm4.4-6.1c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8 1-.1.1-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.4c.1-.1.2-.3.2-.4.1-.1 0-.3 0-.4-.1-.1-.5-1.3-.7-1.7-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 2s.8 2.3.9 2.5c.1.2 1.6 2.5 4 3.5.6.2 1 .4 1.3.5.6.2 1.1.2 1.5.1.5-.1 1.4-.6 1.6-1.1.2-.5.2-1 .1-1.1-.1-.1-.2-.2-.4-.3Z"/>
+  </svg>
+</a>
+
 <script src="assets/js/site-nav.js"></script>
 <script src="assets/js/hero-slider.js"></script>
+<script src="assets/js/cart.js?v=20260927"></script>
 </body>
 </html>

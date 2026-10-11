@@ -1,0 +1,23 @@
+/* ==========================================================
+   ALCOBAS MODERNAS — reglas propias de la página.
+   Misma presentación de tarjeta que Salas Modernas, limitada a
+   .product-grid--alcobas-modernas: no se toca salas.css ni
+   alcobas-modernas.css, que comparten otras páginas.
+   ========================================================== */
+
+/* "contain" nunca recorta ni deforma la foto; el margen que deja en
+   fotos de otra proporción se ve como espacio de diseño (fondo crema). */
+.product-grid--alcobas-modernas .product-card__media {
+  background: var(--color-cream);
+}
+
+.product-grid--alcobas-modernas .product-card__media img {
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Altura mínima uniforme para la descripción (3 líneas), de modo que
+   todas las tarjetas midan lo mismo. */
+.product-grid--alcobas-modernas .product-card__description {
+  min-height: 69px;
+}

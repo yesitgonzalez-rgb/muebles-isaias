@@ -1,16 +1,16 @@
-LAPTOP HOME/ALCOBA MODERNA.jfif
-LAPTOP HOME/COMEDOR MODERNO.jfif
-LAPTOP HOME/LOGO.jpg
-LAPTOP HOME/SALA MODERNA.jfif
-LAPTOP HOME/SALAS MODERNAS/COREL.cdr
-LAPTOP HOME/SALAS MODERNAS/Modelo de Sección.png
-LAPTOP HOME/SALAS MODERNAS/fotografia_-_2025-01-21t110024.635.webp
-LAPTOP HOME/SALAS MODERNAS/logo-bancolombia.png
-LAPTOP HOME/ALCOBAS MODERNAS/*
+# Carpeta de trabajo: los originales de LAPTOP HOME no se despliegan.
+# Excepción temporal: SALA M1.png es el único archivo de LAPTOP HOME que usan las
+# páginas hoy (Home y Alcobas). Se quita la excepción cuando se migre a assets/.
+LAPTOP HOME/*/*
+LAPTOP HOME/*.*
 !LAPTOP HOME/ALCOBAS MODERNAS/SALA M1.png
-RESPONSIFE/
-LAPTOP HOME/COMEDORES MODERNOS/
-LAPTOP HOME/Decoración tradicionales para el dormitorio principal.docx
-# Reglas sin "/" ni acentos: la CLI de Vercel en Windows no aplica las reglas con "/" a rutas con caracteres no ASCII (ignore@4.0.6)
+# Carpeta RESPONSIVA (3 archivos sin uso en las páginas). Antes decía RESPONSIFE.
+RESPONSIVA/
+# Respaldo para nombres con caracteres no ASCII: la CLI de Vercel en Windows no aplica
+# las reglas con "/" a rutas con tildes o eñes (ignore@4.0.6), así que se repiten sin "/".
+*RESTAURACI*N MUEBLES*
+*PROCESO*DISE*O.jfif
+*PROCESO*FABRICACI*N.jfif
+*PROCESO*RESTAURACI*N.jfif
 *Modelo de Secci*n.png
 *Decorac*n tradicionales para el dormitorio principal.docx

@@ -1,0 +1,128 @@
+/* Complemento propio de Salas Lineales.
+   Reproduce, para .product-grid--lineales, las tres reglas que en
+   salas.css están atadas al nombre .product-grid--salas-modernas
+   (caja de foto, fondo crema y object-fit: contain), sin modificar
+   salas.css. Se carga después de salas.css y animations.css. */
+
+.product-grid--lineales .product-card__media {
+  background: var(--color-cream);
+}
+
+.product-grid--lineales .product-card__media img {
+  object-fit: contain;
+  object-position: center;
+}
+
+/* ==========================================================
+   AJUSTES PROPIOS DE SALAS CLÁSICAS (pie de página y medios de pago)
+   Solo esta página: no modifican salas.css ni a Salas Modernas.
+   ========================================================== */
+
+/* Propuesta 5 — foto de medios de pago un poco más grande.
+   El original mide 1280 px, así que 640 px no la pixela; la proporción
+   se mantiene (aspect-ratio y height:auto de salas.css). */
+.payment-band__image {
+  max-width: 640px;
+}
+
+/* Propuesta 2 — títulos del pie alineados en escritorio.
+   "Todos nuestros productos" necesita ~269 px en una sola línea; la
+   columna 2 toma ese ancho (max-content) y las demás se reparten el
+   resto, de modo que las tres listas arrancan a la misma altura. */
+@media (min-width: 1024px) {
+  .site-footer__grid {
+    grid-template-columns: minmax(0, 1.2fr) max-content minmax(0, 1.2fr) minmax(0, 1fr);
+  }
+
+  nav.site-footer__col .site-footer__title {
+    white-space: nowrap;
+  }
+}
+
+/* Propuesta 3 — pie más corto en móvil.
+   La lista de productos pasa a 2 columnas (5 enlaces en 3 filas, cada
+   enlace conserva sus 44 px de zona táctil) y se reduce el espacio entre
+   bloques. */
+@media (max-width: 767px) {
+  .site-footer__grid {
+    gap: 1.2rem;
+  }
+
+  nav.site-footer__col .site-footer__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1rem;
+  }
+}
+
+/* Descripciones de las tarjetas: misma altura mínima que en Salas Modernas
+   (3 líneas, ~69 px) para que las tres tarjetas midan igual aunque una
+   descripción ocupe menos líneas. */
+.product-grid--lineales .product-card__description {
+  min-height: 69px;
+}
+
+/* Horario de atención: cada hora ("8:00 a.m.", "5:00 p.m.") se mantiene
+   en una sola pieza para que "a.m."/"p.m." no quede suelto en una línea
+   aparte en pantallas angostas, y las líneas se reparten de forma pareja.
+   No cambia el texto, solo cómo se parte. */
+.info-boxes .hora {
+  white-space: nowrap;
+}
+
+.info-boxes .info-box__text {
+  text-wrap: balance;
+}
+
+/* ==========================================================
+   AJUSTES MÓVILES DE LA PARTE INFERIOR (A, B y C)
+   ========================================================== */
+
+/* A — Los títulos en caja reparten sus líneas de forma pareja: en móvil
+   "CONOCE NUESTROS MEDIOS DE PAGO" ya no deja "PAGO" solo en la segunda
+   línea. En pantallas donde cabe en una línea no cambia nada. */
+.category-banner__box {
+  text-wrap: balance;
+}
+
+@media (max-width: 767px) {
+  /* B — El contenido del pie se alinea con el margen general de la
+     página (4vw, igual que tarjetas, cajas y formulario) en vez del
+     6vw de salas.css. */
+  .site-footer {
+    padding-left: 4vw;
+    padding-right: 4vw;
+  }
+
+  /* C — Columna Contacto: las tres filas tienen la misma altura de
+     44 px (zona táctil de los enlaces), de modo que la separación entre
+     "WhatsApp", "Correo" y "Contacto adicional" es pareja. */
+  .site-footer__col:nth-child(3) .site-footer__list li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 0.35em;
+    min-height: 44px;
+  }
+}
+
+/* ==========================================================
+   E — Pie en 2 × 2 entre 1024 y 1219 px
+   Con 4 columnas, en pantallas de este rango Contacto y Síguenos quedan
+   de 165–260 px y el correo y los usuarios de Instagram/TikTok se
+   partían a mitad de palabra. En este rango el pie usa 2 columnas (la
+   misma distribución aprobada a 900 y 768 px); desde 1220 px vuelven
+   las 4 columnas. No cambia textos ni enlaces.
+   ========================================================== */
+@media (min-width: 1024px) and (max-width: 1219px) {
+  .site-footer__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Título principal de la página: ahora es un <h1> (encabezado principal
+   para lectores de pantalla y buscadores). El navegador le pone márgenes
+   por defecto; con margin: 0 conserva exactamente su aspecto anterior. */
+h1.category-banner__box {
+  margin: 0;
+}

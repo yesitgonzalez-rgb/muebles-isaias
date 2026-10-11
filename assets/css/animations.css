@@ -1,0 +1,132 @@
+/* ==========================================================
+   ANIMACIONES SUTILES — solo transform / opacity
+   No cambia estructura, tamaños, imágenes ni sliders.
+   Se carga DESPUÉS de salas.css.
+   ========================================================== */
+
+/* ---------- 1. TARJETAS DE PRODUCTO ---------- */
+
+.product-card {
+  transition: transform 400ms ease, box-shadow 400ms ease;
+}
+
+.product-card__media img {
+  transition: transform 500ms ease;
+}
+
+/* Hover real (ratón) o foco por teclado: elevación + sombra + zoom leve.
+   La imagen mantiene su proporción (scale no deforma). */
+@media (hover: hover) and (pointer: fine) {
+  .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 36px rgba(26,20,16,0.16);
+  }
+
+  .product-card:hover .product-card__media img {
+    transform: scale(1.03);
+  }
+}
+
+.product-card:focus-within {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 36px rgba(26,20,16,0.16);
+}
+
+.product-card:focus-within .product-card__media img {
+  transform: scale(1.03);
+}
+
+/* Táctil: no depende de hover; respuesta breve al tocar */
+@media (hover: none) {
+  .product-card:active {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(26,20,16,0.14);
+  }
+}
+
+/* Botón de la tarjeta */
+.product-card__add {
+  transition: transform 250ms ease, background 250ms ease, color 250ms ease, box-shadow 250ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .product-card__add:hover {
+    box-shadow: 0 6px 16px rgba(201,161,90,0.4);
+  }
+}
+
+.product-card__add:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* ---------- 2 y 3. APARICIÓN AL DESPLAZARSE (imágenes y textos) ----------
+   Las clases las agrega animations.js solo a elementos que aún no están
+   a la vista; sin JS no se oculta nada. */
+
+.reveal {
+  opacity: 0;
+  translate: 0 18px;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  translate: 0 0;
+  transition:
+    opacity 700ms cubic-bezier(0.22, 0.61, 0.36, 1) var(--reveal-delay, 0ms),
+    translate 700ms cubic-bezier(0.22, 0.61, 0.36, 1) var(--reveal-delay, 0ms),
+    transform 400ms ease,
+    box-shadow 400ms ease;
+}
+
+/* ---------- 5. PIE DE PÁGINA: solo enlaces ---------- */
+
+.site-footer__list a,
+.site-footer__col a {
+  transition: color 250ms ease, transform 250ms ease, background 250ms ease;
+}
+
+.site-footer__cta {
+  transition: color 250ms ease, background 250ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  nav.site-footer__col .site-footer__list a {
+    display: inline-block;
+  }
+
+  nav.site-footer__col .site-footer__list a:hover {
+    transform: translateX(3px);
+  }
+}
+
+/* ---------- 8. ACCESIBILIDAD ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal.is-visible {
+    opacity: 1;
+    translate: none;
+    transition: none;
+  }
+
+  .product-card,
+  .product-card__media img,
+  .product-card__add {
+    transition: none;
+  }
+
+  .product-card:hover,
+  .product-card:focus-within,
+  .product-card:active {
+    transform: none;
+  }
+
+  .product-card:hover .product-card__media img,
+  .product-card:focus-within .product-card__media img {
+    transform: none;
+  }
+
+  nav.site-footer__col .site-footer__list a:hover {
+    transform: none;
+  }
+}

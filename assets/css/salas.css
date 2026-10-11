@@ -1,0 +1,1074 @@
+/* Complemento para la página interna de Salas.
+   Aporta el slider superior y el ticker (reutiliza los componentes
+   "hero" y "ticker" del Home), igual a como catalogo-wide.css
+   complementa a alcobas-modernas.css. Se carga DESPUÉS de
+   alcobas-modernas.css. */
+
+/* ---------- TICKER HORIZONTAL (idéntico al del Home) ---------- */
+
+.ticker {
+  background: #241c16;
+  color: var(--color-cream);
+  border-top: 1px solid rgba(201,161,90,0.35);
+  border-bottom: 1px solid rgba(201,161,90,0.35);
+  overflow: hidden;
+}
+
+.ticker__track {
+  display: flex;
+  flex-wrap: nowrap;
+  width: max-content;
+  white-space: nowrap;
+  animation: ticker-scroll 70s linear infinite;
+}
+
+.ticker:hover .ticker__track,
+.ticker:focus-within .ticker__track {
+  animation-play-state: paused;
+}
+
+.ticker__group[aria-hidden="true"] {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.ticker__group {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ticker__item {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  padding: 0.6rem 0;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+
+.ticker__item::after {
+  content: "•";
+  margin: 0 1.6rem;
+  color: var(--color-gold);
+}
+
+.ticker__item strong {
+  color: var(--color-gold);
+  font-weight: 600;
+  margin-right: 0.6rem;
+}
+
+.ticker__link {
+  color: var(--color-gold-light);
+  font-weight: 600;
+  margin-left: 0.5rem;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.ticker__link:hover {
+  color: var(--color-cream);
+}
+
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Botón "ADICIONAR AL CARRITO" con el mismo tamaño de letra
+   que su equivalente en el Home (.category-card__add). Solo afecta
+   a esta página; no se toca alcobas-modernas.css. */
+.product-card__add {
+  font-size: 0.85rem;
+}
+
+/* ---------- UNIFORMIDAD DE TARJETAS — SALAS MODERNAS ----------
+   Diagnóstico: con "cover" (usado antes en este bloque) las fotos 1,
+   3 y sobre todo 4 perdían entre 40% y 71% del ancho original,
+   cortando parte del mueble — inaceptable para una ficha de catálogo,
+   cuya prioridad 1 es mostrar el producto completo.
+   Se usa "contain" (nunca recorta ni deforma) dentro de la misma
+   caja de tamaño fijo (scoped a .product-grid--salas-modernas, sin
+   tocar alcobas-modernas.css ni la tarjeta de Salas Clásicas). Se
+   cambia además el fondo de la caja de gris (#eee, heredado) a un
+   crema de la propia paleta, para que el margen que deja "contain"
+   en fotos de proporción distinta se vea como un espacio de diseño
+   intencional y no como un hueco vacío. */
+.product-grid--salas-modernas .product-card__media {
+  background: var(--color-cream);
+}
+
+/* El cuerpo de la tarjeta (alcobas-modernas.css: .product-card__body)
+   no tiene altura fija — crece según el texto. Se reserva una altura
+   mínima uniforme para la descripción (3 líneas, ~69px = el texto más
+   largo actual de las 3 tarjetas) para que, si una descripción llega a
+   ocupar menos líneas, la tarjeta no mida distinto a las demás. */
+.product-grid--salas-modernas .product-card__description {
+  min-height: 69px;
+}
+
+.product-grid--salas-modernas .product-card__media img {
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Cajas reservadas para referencias nuevas (aún sin foto). Misma
+   estructura y tamaño que una tarjeta real; atenuadas y sin acción. */
+.product-card--pending .product-card__media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px dashed rgba(26,20,16,0.2);
+}
+
+.product-card__pending-label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.45;
+}
+
+.product-card--pending .product-card__title,
+.product-card--pending .product-card__description {
+  opacity: 0.5;
+}
+
+.product-card--pending .product-card__add:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ---------- SALAS CLÁSICAS — GRID DE UNA SOLA TARJETA ----------
+   Con una sola tarjeta, el grid heredado de alcobas-modernas.css
+   (1fr) la estira para llenar todo el ancho del contenedor (~1085px),
+   dejando una caja de imagen enorme (aspect-ratio fijo => mucha
+   altura). Se fija el ancho de columna al mismo rango que usan las
+   tarjetas de Salas Modernas, para que quede del mismo porte visual
+   en vez de estirarse, y se centra porque es la única tarjeta.
+   No se toca la imagen, el carrito ni alcobas-modernas.css. */
+.product-grid--salas-clasicas {
+  grid-template-columns: minmax(280px, 335px);
+  justify-content: center;
+}
+
+/* ---------- CONOCE NUESTROS MEDIOS DE PAGO ----------
+   Reemplaza el placeholder punteado por el recurso real
+   (Nequi / Bancolombia / Daviplata / Davivienda). Se muestra
+   completo, sin recortar ni alterar su contenido gráfico. */
+.payment-band__image {
+  display: block;
+  width: 100%;
+  max-width: 520px;
+  aspect-ratio: 1280 / 748;
+  height: auto;
+  margin: 0 auto;
+  border-radius: 4px;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1920 / 700;
+  min-height: 320px;
+  max-height: 700px;
+  overflow: hidden;
+  background: var(--color-dark);
+}
+
+.hero__track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.hero__slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 900ms ease;
+}
+
+.hero__slide.is-active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 1;
+}
+
+.hero__media {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.hero__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(246,241,234,0.5);
+  background: rgba(26,20,16,0.35);
+  color: var(--color-cream);
+  font-size: 1.1rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 200ms ease, border-color 200ms ease;
+}
+
+.hero__arrow:hover {
+  background: rgba(201,161,90,0.85);
+  border-color: var(--color-gold);
+}
+
+.hero__arrow--prev { left: 2.5vw; }
+.hero__arrow--next { right: 2.5vw; }
+
+.hero__dots {
+  position: absolute;
+  bottom: 2.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  gap: 0.6rem;
+}
+
+.hero__dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  border: 1px solid var(--color-cream);
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: background 200ms ease, transform 200ms ease;
+}
+
+.hero__dot.is-active {
+  background: var(--color-gold);
+  border-color: var(--color-gold);
+  transform: scale(1.15);
+}
+
+@media (max-width: 767px) {
+  .hero {
+    aspect-ratio: 1080 / 1350;
+    max-height: none;
+  }
+
+  .hero__arrow {
+    width: 40px;
+    height: 40px;
+  }
+
+  .hero__arrow--prev { left: 3vw; }
+  .hero__arrow--next { right: 3vw; }
+
+  .ticker__item {
+    font-size: 0.8rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__slide {
+    transition: none;
+  }
+
+  .ticker {
+    overflow-x: auto;
+  }
+
+  .ticker__track {
+    animation: none;
+  }
+}
+
+/* ---------- BANNER DE LÍNEA SIN INTERACTIVIDAD ----------
+   Para líneas con una sola imagen real disponible (ej. Clásicas):
+   mismo formato visual que el slider de Modernas, pero estático
+   (sin flechas, sin puntos, sin JS), porque no hay nada que rotar. */
+
+.line-banner {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1920 / 700;
+  min-height: 320px;
+  max-height: 700px;
+  overflow: hidden;
+  background: var(--color-dark);
+}
+
+.line-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+@media (max-width: 767px) {
+  .line-banner {
+    aspect-ratio: 1080 / 1350;
+    max-height: none;
+  }
+}
+
+/* ---------- LÍNEA PENDIENTE DE RECURSOS (ej. Lineales) ---------- */
+
+.line-pending {
+  padding: 2.5rem 4vw 3rem;
+  text-align: center;
+  background: var(--color-cream);
+}
+
+.line-pending__note {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  border: 1px dashed rgba(26,20,16,0.25);
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: #6b5f52;
+}
+
+/* Footer (reutiliza el diseño ya aprobado del Home; alcobas-modernas.css
+   no incluye estilos de footer porque ninguna página interna lo tenía). */
+
+.site-footer {
+  background: #14100c;
+  background-image: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: top;
+  color: var(--color-cream);
+  padding: 3rem 4vw 1.5rem;
+  text-align: center;
+}
+
+.site-footer__brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.site-footer__logo {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+}
+
+.site-footer__brand p {
+  font-size: 0.85rem;
+  opacity: 0.7;
+  margin: 0;
+}
+
+.site-footer__nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.site-footer__nav a {
+  color: var(--color-cream);
+  text-decoration: none;
+  font-size: 0.85rem;
+  opacity: 0.85;
+  transition: opacity 200ms ease;
+}
+
+.site-footer__nav a:hover {
+  opacity: 1;
+  color: var(--color-gold-light);
+}
+
+.site-footer__whatsapp {
+  display: block;
+  color: var(--color-gold-light);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.site-footer__copy {
+  font-size: 0.78rem;
+  opacity: 0.5;
+  margin: 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(246,241,234,0.1);
+}
+
+/* Video exclusivo de la categoría — espacio reservado.
+   Mismo tratamiento visual que .payment-band (alcobas-modernas.css),
+   para no inventar un nuevo lenguaje visual mientras el recurso
+   real esté pendiente. */
+
+.category-video {
+  padding: 2rem 4vw 3rem;
+  text-align: center;
+}
+
+.category-video__label {
+  display: block;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.6;
+  margin-bottom: 0.75rem;
+}
+
+.category-video__placeholder {
+  max-width: 640px;
+  aspect-ratio: 16 / 9;
+  margin: 0 auto;
+  border: 1px dashed rgba(26,20,16,0.25);
+  border-radius: 4px;
+}
+
+@media (max-width: 767px) {
+  .site-footer__nav {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .site-footer__nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0 1rem;
+  }
+
+  .site-footer__whatsapp {
+    padding: 0.7rem 0;
+    margin: -0.7rem 0 0.8rem;
+  }
+}
+
+/* ==========================================================
+   BLOQUE COMERCIAL + CONTÁCTENOS (parte inferior de Salas)
+   ========================================================== */
+
+/* Texto comercial después de los productos */
+.commercial-note {
+  padding: 2.5rem 4vw 2rem;
+}
+
+.commercial-note__text {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 1.4rem 1.8rem;
+  background: #fff;
+  border: 1px solid var(--color-gold);
+  border-radius: 2px;
+  text-align: center;
+  font-family: var(--font-title);
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  line-height: 1.5;
+  color: var(--color-dark);
+}
+
+/* Bloque editorial — proceso de trabajo (primer bloque: fabricación).
+   Imagen cuadrada (1:1) a un lado y título + texto al otro, alineado con
+   las tarjetas (mismo ancho de contenido). Los bloques siguientes se
+   agregan como otro .editorial-block y alternan el lado de la imagen.
+   En móvil (hasta 767 px) la imagen va arriba y el texto debajo. */
+.editorial {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 4vw 3rem;
+}
+
+.editorial-block {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  align-items: center;
+}
+
+.editorial-block + .editorial-block {
+  margin-top: 3rem;
+}
+
+.editorial-block:nth-child(even) .editorial-block__media {
+  order: 2;
+}
+
+.editorial-block__media {
+  margin: 0;
+}
+
+.editorial-block__image {
+  display: block;
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 8px 24px rgba(26,20,16,0.08);
+}
+
+.editorial-block__title {
+  margin: 0 0 1rem;
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  line-height: 1.2;
+  color: var(--color-dark);
+}
+
+.editorial-block__copy {
+  max-width: 34rem;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #3a2f26;
+}
+
+@media (max-width: 767px) {
+  .editorial-block {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+  }
+
+  .editorial-block:nth-child(even) .editorial-block__media {
+    order: 0;
+  }
+
+  .editorial-block__image {
+    max-width: none;
+  }
+}
+
+/* Atención al cliente + Cotiza con nosotros */
+.info-boxes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem 4vw 3rem;
+}
+
+.info-box {
+  display: block;
+  padding: 1.8rem 1.5rem;
+  background: #fff;
+  border: 1px solid rgba(201,161,90,0.5);
+  border-radius: 6px;
+  box-shadow: 0 8px 24px rgba(26,20,16,0.08);
+  text-align: center;
+  color: var(--color-dark);
+  text-decoration: none;
+}
+
+.info-box__title {
+  margin: 0 0 0.6rem;
+  font-family: var(--font-title);
+  font-size: 1.15rem;
+  letter-spacing: 0.06em;
+}
+
+.info-box__text {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #4a3f36;
+}
+
+.info-box--link {
+  background: var(--color-dark);
+  border-color: var(--color-gold);
+  transition: transform 200ms ease, background 200ms ease;
+}
+
+.info-box--link .info-box__title {
+  color: var(--color-gold-light);
+}
+
+.info-box--link .info-box__text {
+  color: var(--color-cream);
+  font-weight: 500;
+}
+
+.info-box--link:hover,
+.info-box--link:focus-visible {
+  background: #241c16;
+  transform: translateY(-2px);
+}
+
+/* Atención al cliente — identidad dorada de la marca.
+   Solo cambia el color del recuadro informativo (no el del enlace
+   "Cotiza con nosotros", que sigue oscuro). Tamaños, relleno y texto
+   no cambian. Contraste del texto oscuro sobre el dorado: 7,6 a 11,3. */
+.info-boxes .info-box:not(.info-box--link) {
+  background: linear-gradient(135deg, var(--color-gold-light) 0%, var(--color-gold) 100%);
+  border-color: #b08d4a;
+  box-shadow: 0 8px 24px rgba(201,161,90,0.35);
+}
+
+.info-boxes .info-box:not(.info-box--link) .info-box__title,
+.info-boxes .info-box:not(.info-box--link) .info-box__text {
+  color: var(--color-dark);
+}
+
+/* Módulo Contáctenos */
+.contact-section {
+  padding: 1rem 4vw 4rem;
+}
+
+.contact-box {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2.2rem 2rem;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 8px 24px rgba(26,20,16,0.08);
+}
+
+.contact-box__title {
+  margin: 0 0 0.5rem;
+  text-align: center;
+  font-family: var(--font-title);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: var(--color-dark);
+}
+
+.contact-box__lead {
+  margin: 0 auto 1.8rem;
+  max-width: 520px;
+  text-align: center;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #4a3f36;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.contact-form__row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.1rem;
+}
+
+.contact-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  min-width: 0;
+}
+
+.contact-form__field label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--color-dark);
+}
+
+.contact-form__field input,
+.contact-form__field select,
+.contact-form__field textarea {
+  width: 100%;
+  min-height: 48px;
+  padding: 0.75rem 0.9rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-dark);
+  background: var(--color-cream);
+  border: 1px solid rgba(26,20,16,0.2);
+  border-radius: 4px;
+}
+
+.contact-form__field textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.contact-form__field input:focus,
+.contact-form__field select:focus,
+.contact-form__field textarea:focus {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 1px;
+  border-color: var(--color-gold);
+}
+
+.contact-form__field [aria-invalid="true"] {
+  border-color: #a33a2d;
+}
+
+.contact-form__error {
+  min-height: 1em;
+  font-size: 0.8rem;
+  color: #a33a2d;
+}
+
+.contact-form__error:empty {
+  min-height: 0;
+}
+
+.contact-form__submit {
+  width: 100%;
+  min-height: 52px;
+  margin-top: 0.4rem;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 767px) {
+  .info-boxes {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-box {
+    padding: 1.6rem 1.2rem;
+  }
+
+  .contact-form__row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================
+   PIE DE PÁGINA — 4 columnas (marca | productos | contacto | redes)
+   Sobrio y compacto: reutiliza fondo, dorado y tipografías del
+   footer existente; sobrescribe solo la disposición.
+   ========================================================== */
+
+.site-footer {
+  text-align: left;
+  padding: 2.5rem 4vw 1.2rem;
+}
+
+.site-footer__grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1.3fr 1.1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto 1.8rem;
+}
+
+.site-footer__col {
+  min-width: 0;
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.site-footer__col p {
+  margin: 0 0 0.7rem;
+  opacity: 0.8;
+}
+
+.site-footer__logo-link {
+  display: inline-block;
+  margin-bottom: 0.9rem;
+}
+
+.site-footer__title {
+  margin: 0 0 0.9rem;
+  font-family: var(--font-title);
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+.site-footer__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-footer__list li {
+  margin-bottom: 0.45rem;
+  opacity: 0.85;
+  overflow-wrap: anywhere;
+}
+
+.site-footer__list a,
+.site-footer__col a {
+  color: var(--color-cream);
+  text-decoration: none;
+  transition: color 200ms ease;
+}
+
+.site-footer__list a:hover,
+.site-footer__col a:hover {
+  color: var(--color-gold-light);
+}
+
+.site-footer__cta {
+  display: inline-block;
+  margin: 0.3rem 0 0.5rem;
+  padding: 0.55rem 1.2rem;
+  border: 1px solid var(--color-gold);
+  border-radius: 2px;
+  font-weight: 600;
+  color: var(--color-gold-light) !important;
+}
+
+.site-footer__cta:hover {
+  background: var(--color-gold);
+  color: var(--color-dark) !important;
+}
+
+.site-footer__col .site-footer__whatsapp {
+  display: block;
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--color-gold-light);
+}
+
+.site-footer__copy {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+@media (max-width: 1023px) {
+  .site-footer__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .site-footer {
+    padding: 2rem 6vw 1.2rem;
+  }
+
+  .site-footer__grid {
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+  }
+
+  .site-footer__list a,
+  .site-footer__col a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  .site-footer__list li {
+    margin-bottom: 0;
+  }
+
+  .site-footer__col .site-footer__whatsapp {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+/* Íconos de redes (SVG en línea, color del texto dorado cálido) */
+.site-footer__social li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.site-footer__icon {
+  flex: 0 0 auto;
+  width: 20px;
+  height: 20px;
+  color: var(--color-gold);
+}
+
+@media (max-width: 767px) {
+  .site-footer__social li {
+    min-height: 44px;
+  }
+}
+
+/* ==========================================================
+   MENÚ SALAS DESPLEGABLE (Salas Modernas / Clásicas / Lineales)
+   Solo en esta página; mismo lenguaje visual del menú actual.
+   ========================================================== */
+
+.site-nav__item--dropdown {
+  position: relative;
+}
+
+.site-nav__dropdown-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--color-cream);
+  transition: color 200ms ease;
+}
+
+.site-nav__dropdown-toggle::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  margin-top: -3px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg);
+  transition: transform 220ms ease;
+}
+
+.site-nav__dropdown-toggle:hover,
+.site-nav__dropdown-toggle.is-current,
+.site-nav__item--dropdown.is-open .site-nav__dropdown-toggle {
+  color: var(--color-gold-light);
+}
+
+.site-nav__item--dropdown.is-open .site-nav__dropdown-toggle::after {
+  transform: rotate(-135deg);
+  margin-top: 3px;
+}
+
+.site-nav__submenu {
+  position: absolute;
+  top: 100%;
+  left: -1rem;
+  z-index: 25;
+  min-width: 230px;
+  margin: 0;
+  padding: 0.5rem 0;
+  list-style: none;
+  background: #241c16;
+  border: 1px solid rgba(201,161,90,0.25);
+  border-top: 2px solid var(--color-gold);
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 14px 30px rgba(0,0,0,0.35);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: opacity 220ms ease, transform 220ms ease, visibility 0s linear 220ms;
+}
+
+.site-nav__item--dropdown.is-open .site-nav__submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: opacity 220ms ease, transform 220ms ease, visibility 0s;
+}
+
+.site-nav__submenu a,
+.site-nav__submenu-pending {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.7rem 1.2rem;
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.site-nav__submenu a {
+  color: var(--color-cream);
+  text-decoration: none;
+  transition: color 200ms ease, background 200ms ease;
+}
+
+.site-nav__submenu a:hover,
+.site-nav__submenu a:focus-visible,
+.site-nav__submenu a.is-current {
+  color: var(--color-gold-light);
+  background: rgba(201,161,90,0.08);
+}
+
+.site-nav__submenu-pending {
+  color: var(--color-cream);
+  opacity: 0.5;
+  cursor: default;
+}
+
+.site-nav__submenu-pending small {
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-gold-light);
+}
+
+/* Menú hamburguesa (móvil): el submenú se despliega dentro del menú */
+@media (max-width: 767px) {
+  .site-nav.is-open {
+    max-height: 640px;
+  }
+
+  .site-nav__item--dropdown {
+    width: 100%;
+  }
+
+  .site-nav__dropdown-toggle {
+    min-height: 32px;
+  }
+
+  .site-nav__submenu {
+    position: static;
+    min-width: 0;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+    margin: 0 0 0 0.3rem;
+    background: transparent;
+    border: none;
+    border-left: 1px solid rgba(201,161,90,0.4);
+    border-radius: 0;
+    box-shadow: none;
+    transform: none;
+    transition: max-height 280ms ease, opacity 220ms ease, visibility 0s linear 280ms;
+  }
+
+  .site-nav__item--dropdown.is-open .site-nav__submenu {
+    max-height: 220px;
+    margin-top: 0.4rem;
+    transition: max-height 280ms ease, opacity 220ms ease, visibility 0s;
+  }
+
+  .site-nav__submenu a,
+  .site-nav__submenu-pending {
+    min-height: 44px;
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-nav__submenu,
+  .site-nav__item--dropdown.is-open .site-nav__submenu,
+  .site-nav__dropdown-toggle::after {
+    transition: none;
+  }
+}

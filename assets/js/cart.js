@@ -17,16 +17,36 @@
     } catch (e) {}
   }
 
-  function addToCart(id, name) {
+  function addToCart(id, name, extra) {
     var cart = getCart();
     var existing = cart.find(function (item) { return item.id === id; });
     if (existing) {
       existing.qty += 1;
     } else {
-      cart.push({ id: id, name: name, qty: 1 });
+      var item = { id: id, name: name, qty: 1 };
+      if (extra && extra.img) item.img = extra.img;
+      if (extra && extra.desc) item.desc = extra.desc;
+      cart.push(item);
     }
     saveCart(cart);
     render();
+  }
+
+  function changeQty(id, delta) {
+    var cart = getCart();
+    var item = cart.find(function (it) { return it.id === id; });
+    if (!item) return;
+    item.qty = Math.max(1, item.qty + delta);
+    saveCart(cart);
+    render();
+  }
+
+  // Modo "rico" (Home): el panel declara data-cart-rich y muestra imagen,
+  // descripción y controles de cantidad. Sin ese atributo se conserva el
+  // comportamiento anterior de las páginas de catálogo.
+  function isRich() {
+    var panel = document.getElementById('cartPanel');
+    return !!(panel && panel.hasAttribute('data-cart-rich'));
   }
 
   function removeFromCart(id) {
@@ -35,7 +55,19 @@
     render();
   }
 
+  function buildRichWhatsappMessage(cart) {
+    if (!cart.length) {
+      return 'Hola, quiero solicitar información y cotización de Muebles Isaías.';
+    }
+    var lines = ['Hola, quiero solicitar información y cotización sobre:', ''];
+    cart.forEach(function (item) {
+      lines.push('* ' + item.name + ' — Cantidad: ' + item.qty);
+    });
+    return lines.join('\n');
+  }
+
   function buildWhatsappMessage(cart) {
+    if (isRich()) return buildRichWhatsappMessage(cart);
     if (!cart.length) {
       return 'Hola, quiero cotizar productos de Muebles Isaías.';
     }
@@ -44,6 +76,63 @@
       lines.push('- ' + item.name + (item.qty > 1 ? ' (x' + item.qty + ')' : ''));
     });
     return lines.join('\n');
+  }
+
+  function makeButton(className, text, label, onClick) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = className;
+    b.textContent = text;
+    b.setAttribute('aria-label', label);
+    b.addEventListener('click', onClick);
+    return b;
+  }
+
+  function buildRichItem(item) {
+    var li = document.createElement('li');
+    li.className = 'cart-item';
+
+    if (item.img) {
+      var img = document.createElement('img');
+      img.className = 'cart-item__img';
+      img.src = item.img;
+      img.alt = item.name;
+      li.appendChild(img);
+    }
+
+    var info = document.createElement('div');
+    info.className = 'cart-item__info';
+
+    var name = document.createElement('strong');
+    name.className = 'cart-item__name';
+    name.textContent = item.name;
+    info.appendChild(name);
+
+    if (item.desc) {
+      var desc = document.createElement('span');
+      desc.className = 'cart-item__desc';
+      desc.textContent = item.desc;
+      info.appendChild(desc);
+    }
+
+    var qty = document.createElement('div');
+    qty.className = 'cart-item__qty';
+    var minus = makeButton('cart-item__btn', '−', 'Disminuir cantidad de ' + item.name, function () { changeQty(item.id, -1); });
+    minus.disabled = item.qty <= 1;
+    var value = document.createElement('span');
+    value.className = 'cart-item__qty-value';
+    value.textContent = 'Cantidad: ' + item.qty;
+    var plus = makeButton('cart-item__btn', '+', 'Aumentar cantidad de ' + item.name, function () { changeQty(item.id, 1); });
+    qty.appendChild(minus);
+    qty.appendChild(value);
+    qty.appendChild(plus);
+    info.appendChild(qty);
+
+    var remove = makeButton('cart-panel__item-remove', 'Eliminar', 'Eliminar ' + item.name + ' del carrito', function () { removeFromCart(item.id); });
+    info.appendChild(remove);
+
+    li.appendChild(info);
+    return li;
   }
 
   function render() {
@@ -65,6 +154,10 @@
       listEl.appendChild(empty);
     } else {
       cart.forEach(function (item) {
+        if (isRich()) {
+          listEl.appendChild(buildRichItem(item));
+          return;
+        }
         var li = document.createElement('li');
 
         var label = document.createElement('span');
@@ -87,6 +180,11 @@
     document.querySelectorAll('[data-add-to-cart]').forEach(function (btn) {
       var card = btn.closest('[data-product-id]');
       if (!card) return;
+      if (isRich()) {
+        var q = cart.filter(function (item) { return item.id === card.getAttribute('data-product-id'); })[0];
+        btn.classList.toggle('is-added', !!q);
+        return;
+      }
       var inCart = cart.some(function (item) { return item.id === card.getAttribute('data-product-id'); });
       btn.classList.toggle('is-added', inCart);
       btn.textContent = inCart ? 'AGREGADO AL CARRITO ✓' : 'ADICIONAR AL CARRITO';
@@ -100,7 +198,10 @@
       btn.addEventListener('click', function () {
         var card = btn.closest('[data-product-id]');
         if (!card) return;
-        addToCart(card.getAttribute('data-product-id'), btn.getAttribute('data-product-name'));
+        addToCart(card.getAttribute('data-product-id'), btn.getAttribute('data-product-name'), {
+          img: btn.getAttribute('data-product-img'),
+          desc: btn.getAttribute('data-product-desc')
+        });
       });
     });
 

@@ -10,6 +10,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/alcobas-modernas.css">
 <link rel="stylesheet" href="assets/css/catalogo-wide.css">
+<link rel="stylesheet" href="assets/css/nav-dropdown.css">
+<link rel="stylesheet" href="assets/css/comedores-pagina.css">
 </head>
 <body>
 
@@ -50,9 +52,29 @@
   <nav class="site-nav" id="siteNav" aria-label="Navegación principal">
     <ul class="site-nav__list">
       <li><a href="index.html">Inicio</a></li>
-      <li><a href="index.html#salas">Salas</a></li>
-      <li><a href="comedores-modernos.html" class="is-current">Comedores</a></li>
-      <li><a href="alcobas-modernas.html">Alcobas</a></li>
+      <li class="site-nav__item site-nav__item--dropdown">
+        <button type="button" class="site-nav__dropdown-toggle" id="salasMenuToggle" aria-expanded="false" aria-haspopup="true" aria-controls="salasSubmenu">Salas</button>
+        <ul class="site-nav__submenu" id="salasSubmenu" aria-labelledby="salasMenuToggle">
+          <li><a href="salas.html">Salas Modernas</a></li>
+          <li><a href="salas-clasicas.html">Salas Clásicas</a></li>
+          <li><a href="salas-lineales.html">Salas Lineales</a></li>
+        </ul>
+      </li>
+      <li class="site-nav__item site-nav__item--dropdown">
+        <button type="button" class="site-nav__dropdown-toggle is-current" id="comedoresMenuToggle" aria-expanded="false" aria-haspopup="true" aria-controls="comedoresSubmenu">Comedores</button>
+        <ul class="site-nav__submenu" id="comedoresSubmenu" aria-labelledby="comedoresMenuToggle">
+          <li><a href="comedores-modernos.html" class="is-current">Comedores Modernos</a></li>
+          <li><span class="site-nav__submenu-pending">Comedores Clásicos <small>Próximamente</small></span></li>
+        </ul>
+      </li>
+      <li class="site-nav__item site-nav__item--dropdown">
+        <button type="button" class="site-nav__dropdown-toggle" id="alcobasMenuToggle" aria-expanded="false" aria-haspopup="true" aria-controls="alcobasSubmenu">Alcobas</button>
+        <ul class="site-nav__submenu" id="alcobasSubmenu" aria-labelledby="alcobasMenuToggle">
+          <li><a href="alcobas-modernas.html">Alcobas Modernas</a></li>
+          <li><span class="site-nav__submenu-pending">Alcobas Clásicas <small>Próximamente</small></span></li>
+          <li><span class="site-nav__submenu-pending">Alcobas Lineales <small>Próximamente</small></span></li>
+        </ul>
+      </li>
       <li><a href="index.html#restauracion">Restauración</a></li>
       <li><a href="index.html#ofertas">Ofertas</a></li>
       <li><a href="index.html#contacto">Contáctanos</a></li>
@@ -82,6 +104,94 @@
 <main>
 
   <!-- ============================================= -->
+  <!-- SLIDER — COMEDORES MODERNOS (9 imágenes: CM1 a CM9) -->
+  <!-- ============================================= -->
+  <section class="hero hero--comedores" id="hero" aria-label="Comedores Modernos">
+    <div class="hero__track" id="heroTrack">
+
+      <!-- SLIDE 1 — CM1 -->
+      <article class="hero__slide is-active" data-slide="0" aria-hidden="false">
+        <picture class="hero__media">
+          <img src="assets/img/catalogo/comedores-modernos/slider-comedores-modernos-1.jpg" alt="Comedores modernos Muebles Isaías, imagen 1" loading="eager">
+        </picture>
+      </article>
+
+      <!-- SLIDE 2 — CM2 -->
+      <article class="hero__slide" data-slide="1" aria-hidden="true">
+        <picture class="hero__media">
+          <img src="assets/img/catalogo/comedores-modernos/slider-comedores-modernos-2.jpg" alt="Comedores modernos Muebles Isaías, imagen 2" loading="lazy">
+        </picture>
+      </article>
+
+      <!-- SLIDE 3 — CM3 -->
+      <article class="hero__slide" data-slide="2" aria-hidden="true">
+        <picture class="hero__media">
+          <img src="assets/img/catalogo/comedores-modernos/slider-comedores-modernos-3.jpg" alt="Comedores modernos Muebles Isaías, imagen 3" loading="lazy">
+        </picture>
+      </article>
+
+      <!-- SLIDE 4 — CM4 -->
+      <article class="hero__slide" data-slide="3" aria-hidden="true">
+        <picture class="hero__media">
+          <img src="assets/img/catalogo/comedores-modernos/slider-comedores-modernos-4.jpg" alt="Comedores modernos Muebles Isaías, imagen 4" loading="lazy">
+        </picture>
+      </article>
+
+      <!-- SLIDE 5 — CM5 -->
+      <article class="hero__slide" data-slide="4" aria-hidden="true">
+        <picture class="hero__media">
+          <img src="assets/img/catalogo/comedores-modernos/slider-comedores-modernos-5.jpg" alt="Comedores modernos Muebles Isaías, imagen 5" loading="lazy">
+        </picture>
+      </article>
+
+      <!-- SLIDE 6 — CM6 -->
+      <article class="hero__slide" data-slide="5" aria-hidden="true">
+        <picture class="hero__media">
+          <img src="assets/img/catalogo/comedores-modernos/slider-comedores-modernos-6.jpg" alt="Comedores modernos Muebles Isaías, imagen 6" loading="lazy">
+        </picture>
+      </article>
+
+      <!-- SLIDE 7 — CM7 -->
+      <article class="hero__slide" data-slide="6" aria-hidden="true">
+        <picture class="hero__media">
+          <img src="assets/img/catalogo/comedores-modernos/slider-comedores-modernos-7.jpg" alt="Comedores modernos Muebles Isaías, imagen 7" loading="lazy">
+        </picture>
+      </article>
+
+      <!-- SLIDE 8 — CM8 -->
+      <article class="hero__slide" data-slide="7" aria-hidden="true">
+        <picture class="hero__media">
+          <img src="assets/img/catalogo/comedores-modernos/slider-comedores-modernos-8.jpg" alt="Comedores modernos Muebles Isaías, imagen 8" loading="lazy">
+        </picture>
+      </article>
+
+      <!-- SLIDE 9 — CM9 -->
+      <article class="hero__slide" data-slide="8" aria-hidden="true">
+        <picture class="hero__media">
+          <img src="assets/img/catalogo/comedores-modernos/slider-comedores-modernos-9.jpg" alt="Comedores modernos Muebles Isaías, imagen 9" loading="lazy">
+        </picture>
+      </article>
+
+    </div>
+
+    <!-- Controles -->
+    <button class="hero__arrow hero__arrow--prev" id="heroPrev" aria-label="Imagen anterior">&#10094;</button>
+    <button class="hero__arrow hero__arrow--next" id="heroNext" aria-label="Siguiente imagen">&#10095;</button>
+
+    <div class="hero__dots" id="heroDots" role="tablist" aria-label="Seleccionar imagen">
+      <button class="hero__dot is-active" data-goto="0" role="tab" aria-selected="true" aria-label="Ver imagen 1"></button>
+      <button class="hero__dot" data-goto="1" role="tab" aria-selected="false" aria-label="Ver imagen 2"></button>
+      <button class="hero__dot" data-goto="2" role="tab" aria-selected="false" aria-label="Ver imagen 3"></button>
+      <button class="hero__dot" data-goto="3" role="tab" aria-selected="false" aria-label="Ver imagen 4"></button>
+      <button class="hero__dot" data-goto="4" role="tab" aria-selected="false" aria-label="Ver imagen 5"></button>
+      <button class="hero__dot" data-goto="5" role="tab" aria-selected="false" aria-label="Ver imagen 6"></button>
+      <button class="hero__dot" data-goto="6" role="tab" aria-selected="false" aria-label="Ver imagen 7"></button>
+      <button class="hero__dot" data-goto="7" role="tab" aria-selected="false" aria-label="Ver imagen 8"></button>
+      <button class="hero__dot" data-goto="8" role="tab" aria-selected="false" aria-label="Ver imagen 9"></button>
+    </div>
+  </section>
+
+  <!-- ============================================= -->
   <!-- IDENTIFICADOR DE CATEGORÍA                     -->
   <!-- ============================================= -->
   <section class="category-banner">
@@ -96,14 +206,14 @@
   </section>
 
   <!-- ============================================= -->
-  <!-- GRID DE TARJETAS DE PRODUCTO                   -->
+  <!-- GRID DE TARJETAS DE PRODUCTO — CM (1) a CM (8)  -->
   <!-- Nombres provisionales (pendientes de nombres/referencias reales) -->
   <!-- ============================================= -->
-  <section class="product-grid product-grid--wide" aria-label="Productos de Comedores Modernos">
+  <section class="product-grid product-grid--comedores-modernos" aria-label="Productos de Comedores Modernos">
 
-    <article class="product-card product-card--wide" data-product-id="comedor-moderno-01">
+    <article class="product-card" data-product-id="comedor-moderno-01">
       <div class="product-card__media">
-        <img src="assets/img/catalogo/comedores-modernos/comedor-moderno-1.jpg" alt="Comedor Moderno 1" loading="eager">
+        <img src="assets/img/catalogo/comedores-modernos/comedor-moderno-tarjeta-1.jpg" alt="Comedor Moderno 1" loading="eager">
       </div>
       <div class="product-card__body">
         <h3 class="product-card__title">Comedor Moderno 1</h3>
@@ -113,9 +223,9 @@
       </div>
     </article>
 
-    <article class="product-card product-card--wide" data-product-id="comedor-moderno-02">
+    <article class="product-card" data-product-id="comedor-moderno-02">
       <div class="product-card__media">
-        <img src="assets/img/catalogo/comedores-modernos/comedor-moderno-2.jpg" alt="Comedor Moderno 2" loading="lazy">
+        <img src="assets/img/catalogo/comedores-modernos/comedor-moderno-tarjeta-2.jpg" alt="Comedor Moderno 2" loading="lazy">
       </div>
       <div class="product-card__body">
         <h3 class="product-card__title">Comedor Moderno 2</h3>
@@ -125,13 +235,73 @@
       </div>
     </article>
 
-    <article class="product-card product-card--wide" data-product-id="comedor-moderno-03">
+    <article class="product-card" data-product-id="comedor-moderno-03">
       <div class="product-card__media">
-        <img src="assets/img/catalogo/comedores-modernos/comedor-moderno-3.jpg" alt="Comedor Moderno 3" loading="lazy">
+        <img src="assets/img/catalogo/comedores-modernos/comedor-moderno-tarjeta-3.jpg" alt="Comedor Moderno 3" loading="lazy">
       </div>
       <div class="product-card__body">
         <h3 class="product-card__title">Comedor Moderno 3</h3>
         <button class="btn btn--primary product-card__add" data-add-to-cart data-product-name="Comedor Moderno 3">
+          ADICIONAR AL CARRITO
+        </button>
+      </div>
+    </article>
+
+    <article class="product-card" data-product-id="comedor-moderno-04">
+      <div class="product-card__media">
+        <img src="assets/img/catalogo/comedores-modernos/comedor-moderno-tarjeta-4.jpg" alt="Comedor Moderno 4" loading="lazy">
+      </div>
+      <div class="product-card__body">
+        <h3 class="product-card__title">Comedor Moderno 4</h3>
+        <button class="btn btn--primary product-card__add" data-add-to-cart data-product-name="Comedor Moderno 4">
+          ADICIONAR AL CARRITO
+        </button>
+      </div>
+    </article>
+
+    <article class="product-card" data-product-id="comedor-moderno-05">
+      <div class="product-card__media">
+        <img src="assets/img/catalogo/comedores-modernos/comedor-moderno-tarjeta-5.jpg" alt="Comedor Moderno 5" loading="lazy">
+      </div>
+      <div class="product-card__body">
+        <h3 class="product-card__title">Comedor Moderno 5</h3>
+        <button class="btn btn--primary product-card__add" data-add-to-cart data-product-name="Comedor Moderno 5">
+          ADICIONAR AL CARRITO
+        </button>
+      </div>
+    </article>
+
+    <article class="product-card" data-product-id="comedor-moderno-06">
+      <div class="product-card__media">
+        <img src="assets/img/catalogo/comedores-modernos/comedor-moderno-tarjeta-6.jpg" alt="Comedor Moderno 6" loading="lazy">
+      </div>
+      <div class="product-card__body">
+        <h3 class="product-card__title">Comedor Moderno 6</h3>
+        <button class="btn btn--primary product-card__add" data-add-to-cart data-product-name="Comedor Moderno 6">
+          ADICIONAR AL CARRITO
+        </button>
+      </div>
+    </article>
+
+    <article class="product-card" data-product-id="comedor-moderno-07">
+      <div class="product-card__media">
+        <img src="assets/img/catalogo/comedores-modernos/comedor-moderno-tarjeta-7.jpg" alt="Comedor Moderno 7" loading="lazy">
+      </div>
+      <div class="product-card__body">
+        <h3 class="product-card__title">Comedor Moderno 7</h3>
+        <button class="btn btn--primary product-card__add" data-add-to-cart data-product-name="Comedor Moderno 7">
+          ADICIONAR AL CARRITO
+        </button>
+      </div>
+    </article>
+
+    <article class="product-card" data-product-id="comedor-moderno-08">
+      <div class="product-card__media">
+        <img src="assets/img/catalogo/comedores-modernos/comedor-moderno-tarjeta-8.jpg" alt="Comedor Moderno 8" loading="lazy">
+      </div>
+      <div class="product-card__body">
+        <h3 class="product-card__title">Comedor Moderno 8</h3>
+        <button class="btn btn--primary product-card__add" data-add-to-cart data-product-name="Comedor Moderno 8">
           ADICIONAR AL CARRITO
         </button>
       </div>
@@ -165,6 +335,8 @@
 </main>
 
 <script src="assets/js/site-nav.js"></script>
+<script src="assets/js/nav-dropdown-multi.js"></script>
 <script src="assets/js/cart.js"></script>
+<script src="assets/js/hero-slider.js"></script>
 </body>
 </html>

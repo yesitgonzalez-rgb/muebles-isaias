@@ -1,0 +1,58 @@
+/* ==========================================================
+   WhatsApp global — componente reutilizable
+   Las reglas de .wa-float son las del botón del Home (style.css),
+   sin cambios, para que el botón se vea igual en todo el sitio.
+   Lo inserta assets/js/whatsapp-float.js. El Home conserva su propio
+   botón; el script no inserta otro si ya existe un .wa-float.
+   ========================================================== */
+
+.wa-float {
+  position: fixed;
+  right: 24px;
+  bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: var(--color-gold);
+  color: var(--color-dark);
+  box-shadow: 0 8px 22px rgba(26,20,16,0.35);
+  transition: transform 200ms ease, background 200ms ease, box-shadow 200ms ease;
+}
+
+.wa-float svg {
+  width: 30px;
+  height: 30px;
+}
+
+.wa-float:hover {
+  background: var(--color-gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(26,20,16,0.4);
+}
+
+@media (max-width: 767px) {
+  .wa-float {
+    right: 16px;
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    width: 54px;
+    height: 54px;
+  }
+
+  .wa-float svg {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* En móvil, el botón flotante no debe tapar el final del pie de página
+   (línea de derechos reservados). Solo aplica donde el script insertó
+   el botón: el pie gana el espacio que ocupa el botón (54 px + 16 px). */
+@media (max-width: 767px) {
+  .has-wa-float .site-footer {
+    padding-bottom: calc(1.2rem + 70px + env(safe-area-inset-bottom, 0px));
+  }
+}
