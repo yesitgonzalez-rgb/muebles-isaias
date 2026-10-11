@@ -1,0 +1,17 @@
+/* ==========================================================
+   COMEDORES CLÁSICOS — reglas propias de la página.
+   Misma presentación de tarjeta que Alcobas Clásicas, limitada a
+   .product-grid--comedores-clasicos: no se toca salas.css ni
+   alcobas-modernas.css, que usan otras páginas.
+   ========================================================== */
+
+/* "contain" nunca recorta ni deforma la foto; el margen que deja en
+   fotos de otra proporción se ve como espacio de diseño (fondo crema). */
+.product-grid--comedores-clasicos .product-card__media {
+  background: var(--color-cream);
+}
+
+.product-grid--comedores-clasicos .product-card__media img {
+  object-fit: contain;
+  object-position: center;
+}
