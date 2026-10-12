@@ -12,6 +12,7 @@
 <link rel="stylesheet" href="assets/css/salas.css">
 <link rel="stylesheet" href="assets/css/animations.css">
 <link rel="stylesheet" href="assets/css/restauracion.css">
+<link rel="stylesheet" href="assets/css/restauracion-slider.css">
 <link rel="stylesheet" href="assets/css/whatsapp-float.css">
 </head>
 <body>
@@ -104,6 +105,41 @@
 </header>
 
 <main>
+  <!-- ============================================= -->
+  <!-- SLIDER SUPERIOR — ANTES Y DESPUÉS (imágenes aptas: SLAIDER 1 y 4).     -->
+  <!-- Pendientes: SLAIDER 2 (errata «mrebles») y SLAIDER 3 (autorización).    -->
+  <!-- Al agregar una: un <article class="hero__slide"> y un <button class="hero__dot">. -->
+  <!-- ============================================= -->
+  <section class="hero hero--restauracion" id="hero" aria-label="Antes y después de restauración de muebles">
+    <div class="hero__track" id="heroTrack">
+
+      <!-- SLIDE 1 — SLAIDER 1.jfif -->
+      <article class="hero__slide is-active" data-slide="0" aria-hidden="false">
+        <picture class="hero__media">
+          <img src="assets/img/restauracion/slider-restauracion-1.jpg" alt="Antes y después de la restauración de un sofá" loading="eager">
+        </picture>
+      </article>
+
+      <!-- SLIDE 2 — SLAIDER 4.jfif -->
+      <article class="hero__slide" data-slide="1" aria-hidden="true">
+        <picture class="hero__media">
+          <img src="assets/img/restauracion/slider-restauracion-4.jpg" alt="Antes y después de la restauración de un sofá" loading="lazy">
+        </picture>
+      </article>
+
+    </div>
+
+    <!-- Controles -->
+    <button class="hero__arrow hero__arrow--prev" id="heroPrev" aria-label="Imagen anterior">&#10094;</button>
+    <button class="hero__arrow hero__arrow--next" id="heroNext" aria-label="Siguiente imagen">&#10095;</button>
+
+    <div class="hero__dots" id="heroDots" role="tablist" aria-label="Seleccionar imagen">
+      <button class="hero__dot is-active" data-goto="0" role="tab" aria-selected="true" aria-label="Ver imagen 1"></button>
+      <button class="hero__dot" data-goto="1" role="tab" aria-selected="false" aria-label="Ver imagen 2"></button>
+    </div>
+
+  </section>
+
   <!-- ============================================= -->
   <!-- TICKER HORIZONTAL (mismo componente del Home)  -->
   <!-- ============================================= -->
@@ -354,6 +390,7 @@
 <script src="assets/js/site-nav.js"></script>
 <script src="assets/js/nav-dropdown-multi.js"></script>
 <script src="assets/js/cart.js"></script>
+<script src="assets/js/hero-slider.js"></script>
 <script src="assets/js/contact-whatsapp.js"></script>
 <script src="assets/js/animations.js"></script>
 <script src="assets/js/whatsapp-float.js"></script>
