@@ -1,0 +1,117 @@
+/* ==========================================================
+   COMEDORES LINEALES — reglas propias de la página.
+   Todo está limitado a .hero--comedores-lineales y
+   .product-grid--comedores-lineales: no se toca salas.css,
+   alcobas-modernas.css ni hero-slider.js, que usan otras páginas.
+   ========================================================== */
+
+/* ---------- SLIDER: banner completo, sin recorte ni deformación ----------
+   La caja del slider toma la proporción de los banners (1712 x 624) y la
+   imagen se ajusta con "contain": los banners de otra proporción (1584 x 672)
+   muestran franjas laterales oscuras en lugar de recortarse. */
+.hero.hero--comedores-lineales {
+  aspect-ratio: auto;
+  min-height: 0;
+  max-height: none;
+  background: var(--color-dark);
+}
+
+.hero--comedores-lineales .hero__track {
+  width: 100%;
+  max-width: 1920px;          /* en pantallas muy anchas: altura máxima ~700 px, centrado */
+  height: auto;
+  aspect-ratio: 1712 / 624;
+  margin-inline: auto;
+}
+
+.hero--comedores-lineales .hero__media img {
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Flechas junto a la imagen, también cuando la pantalla es más ancha que 1920 px */
+.hero--comedores-lineales .hero__arrow--prev { left: max(2.5vw, calc(50% - 960px + 2.5vw)); }
+.hero--comedores-lineales .hero__arrow--next { right: max(2.5vw, calc(50% - 960px + 2.5vw)); }
+
+/* ---------- MÓVIL: controles en una franja debajo del banner ---------- */
+@media (max-width: 767px) {
+  .hero.hero--comedores-lineales {
+    display: grid;
+    grid-template-columns: 52px 1fr 52px;
+    grid-template-areas:
+      "track track track"
+      "prev  dots  next";
+    align-items: center;
+  }
+
+  .hero--comedores-lineales .hero__track { grid-area: track; }
+
+  .hero--comedores-lineales .hero__arrow {
+    position: static;
+    transform: none;
+    width: 44px;
+    height: 44px;
+    margin: 4px 0;
+    justify-self: center;
+    font-size: 1rem;
+  }
+
+  .hero--comedores-lineales .hero__arrow--prev { grid-area: prev; }
+  .hero--comedores-lineales .hero__arrow--next { grid-area: next; }
+
+  .hero--comedores-lineales .hero__dots {
+    grid-area: dots;
+    position: static;
+    transform: none;
+    justify-content: center;
+    gap: 0;
+  }
+
+  /* Área táctil de al menos 24 px; el círculo visible sigue siendo de 11 px */
+  .hero--comedores-lineales .hero__dot {
+    position: relative;
+    width: clamp(24px, calc((100vw - 112px) / 9), 28px);
+    height: 44px;
+    border: none;
+    background: transparent;
+  }
+
+  .hero--comedores-lineales .hero__dot::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 11px;
+    height: 11px;
+    margin: -5.5px 0 0 -5.5px;
+    box-sizing: border-box;
+    border: 1px solid var(--color-cream);
+    border-radius: 50%;
+    transition: background 200ms ease, transform 200ms ease;
+  }
+
+  .hero--comedores-lineales .hero__dot.is-active {
+    background: transparent;
+    border-color: transparent;
+    transform: none;
+  }
+
+  .hero--comedores-lineales .hero__dot.is-active::before {
+    background: var(--color-gold);
+    border-color: var(--color-gold);
+    transform: scale(1.15);
+  }
+}
+
+/* ---------- TARJETAS ---------- */
+
+/* "contain" nunca recorta ni deforma la foto; el margen que deja en
+   fotos de otra proporción se ve como espacio de diseño (fondo crema). */
+.product-grid--comedores-lineales .product-card__media {
+  background: var(--color-cream);
+}
+
+.product-grid--comedores-lineales .product-card__media img {
+  object-fit: contain;
+  object-position: center;
+}
