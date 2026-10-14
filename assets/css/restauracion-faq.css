@@ -1,0 +1,95 @@
+/* ==========================================================
+   RESTAURACIÓN DE MUEBLES — preguntas frecuentes.
+   Limitado a .rest-faq: no se tocan restauracion.css ni ninguna
+   hoja compartida. Acordeón nativo (<details>), sin JavaScript.
+   ========================================================== */
+.rest-faq {
+  padding: clamp(2.5rem, 6vw, 4rem) 4vw;
+}
+
+.rest-faq__inner {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.rest-faq__title {
+  margin: 0 0 1.75rem;
+  font-family: var(--font-title);
+  font-weight: 700;
+  font-size: clamp(1.6rem, 3.4vw, 2.4rem);
+  line-height: 1.2;
+  text-align: center;
+  color: var(--color-dark);
+  text-wrap: balance;
+}
+
+/* Filete dorado bajo el título (identidad de marca, igual que la introducción) */
+.rest-faq__title::after {
+  content: "";
+  display: block;
+  width: 64px;
+  height: 3px;
+  margin: 1.25rem auto 0;
+  background: var(--color-gold);
+}
+
+.rest-faq__item {
+  border-bottom: 1px solid rgba(26, 20, 16, 0.18);
+}
+
+.rest-faq__item:first-of-type {
+  border-top: 1px solid rgba(26, 20, 16, 0.18);
+}
+
+.rest-faq__item summary {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0.9rem 2.5rem 0.9rem 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--color-dark);
+  cursor: pointer;
+  list-style: none;
+}
+
+.rest-faq__item summary::-webkit-details-marker {
+  display: none;
+}
+
+.rest-faq__item summary::after {
+  content: "+";
+  position: absolute;
+  right: 0.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--color-gold);
+}
+
+.rest-faq__item[open] summary::after {
+  content: "\2212";
+}
+
+.rest-faq__item summary:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+.rest-faq__item p {
+  margin: 0 0 1.1rem;
+  padding-right: 2.5rem;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #3a2f26;
+  text-wrap: pretty;
+}
+
+.rest-faq__item a {
+  color: inherit;
+  font-weight: 600;
+}
